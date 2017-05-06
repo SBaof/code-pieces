@@ -1,0 +1,20 @@
+{
+  "name": "code-pices-fe",
+  "version": "1.0.0",
+  "description": "code pieces: fe",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0"
+  },
+  "scripts": {
+    "test": "echo \"CPF\""
+  },
+  "keywords": [
+    "CPF"
+  ],
+  "author": "dcloud",
+  "license": "MIT"
+}
