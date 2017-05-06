@@ -37,10 +37,16 @@ gulp.task('sass', function() {
       .pipe(browserSync.reload({stream: true}));
 })
 
+gulp.task('cp', function() {
+  gulp.src('app/**/*.png')
+      .pipe(gulp.dest('public'));
+})
+
 gulp.task('watch', function() {
   gulp.watch(['app/**/*.html'], ['rebuild']);
   gulp.watch(['app/**/*.scss'], ['sass']);
+  gulp.watch(['app/**/*.png'], ['cp']);
 })
 
-gulp.task('default', ['server', 'watch'])
+gulp.task('default', ['server', 'watch', 'cp'])
 
