@@ -1,9 +1,60 @@
-.bar {
-  .baz {
-    width: 100px;
-    height: 100px;
-    border: 5px solid red;
-    background-color: #BADA55;
-    border-radius: 50%;
+@import 'theme.scss';
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  .status {
+    height: 25px;
+    background-color: $primary-color-dark;
+  }
+  .toolbar {
+    height: 240px;
+    background-color: $primary-color;
+
+    .headings {
+      padding: 65px 20px 0 55px;
+      h1 {
+        color: $primary-color-dark;
+        font-size: 36px;
+        font-weight: 300;
+        margin: 0;
+      }
+      h2 {
+        color: $primary-color-light;
+        font-weight: 200;
+        font-size: 16px;
+        padding-top: 5px;
+        margin: 0;
+      }
+    }
+
+    .header {
+      position: absolute;
+      left: calc(50% - 40px);
+      top: 215px;
+      img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        &:hover {
+        }
+      }
+    }
+
+    &.blur {
+      background-image: url('./avatar_betacat_14.png');
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 270px;
+      filter: opacity(90%);
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
   }
 }
