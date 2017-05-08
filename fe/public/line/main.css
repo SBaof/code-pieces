@@ -1,0 +1,33 @@
+.box {
+  width: 400px; }
+  .box section {
+    padding: 0 20px;
+    position: relative; }
+    .box section::before {
+      content: '';
+      display: block;
+      position: absolute;
+      border-left: 1px solid #BADA55;
+      height: 100%;
+      width: 0;
+      top: 50px;
+      left: 21px; }
+    .box section:last-of-type::before {
+      visibility: hidden; }
+  .box .inner-panner {
+    padding: 20px;
+    position: relative; }
+    .box .inner-panner::before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 100%;
+      background-color: #BADA55;
+      top: 50px;
+      left: -1px; }
+  .box .info {
+    color: #BADA55;
+    font-size: 12px;
+    margin-top: 10px; }

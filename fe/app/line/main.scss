@@ -1,0 +1,46 @@
+.box {
+  width: 400px;
+  // border: 1px solid #BADA55;
+
+  section {
+    padding: 0 20px;
+    position: relative;
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      border-left: 1px solid #BADA55;
+      height: 100%;
+      width: 0;
+      top: 50px;
+      left: 21px;
+    }
+    &:last-of-type::before {
+      visibility: hidden;
+    }
+  }
+
+  .inner-panner {
+    padding: 20px;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 100%;
+      background-color: #BADA55;
+      top: 50px;
+      left: -1px;
+    }
+  }
+
+  .info {
+    color: #BADA55;
+    font-size: 12px;
+    margin-top: 10px;
+  }
+}
+
