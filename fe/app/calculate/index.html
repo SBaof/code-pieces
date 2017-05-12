@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>calculate</title>
+</head>
+<body>
+  <script>
+    // 获取小数的位数
+    function decimalLength (str) {
+      var parts = ('' + str).split('.');
+      return parts.length === 2 ? parts[1].length : 0;
+    };
+
+    // 将浮点数转化为整数 避免小数计算精度问题
+    function float2int (float, length) {
+      var parts = ('' + float).split('.');
+      console.log('parts: ', parts);
+      var result;
+
+      if (length >=0) {
+        // do nothing
+      } else {
+        length = 0;
+      }
+
+      if (parts.length === 1) {
+        result = float + new Array(length + 1).join('0');
+      } else {
+        length = Math.max(0, length - parts[1].length);
+        result = parts.join('') + new Array(length + 1).join('0');
+      }
+      debugger;
+
+      return + result;
+
+    };
+
+    function mult (a, b) {
+      var length = Math.max(
+        decimalLength(a),
+        decimalLength(b)
+      );
+
+      a = float2int(a, length);
+      b = float2int(b, length);
+
+      var factor = Math.pow(10, length);
+
+      return (a * b) / (factor * factor);
+    }
+
+  mult(1, 2.1111);
+debugger;
+
+
+  </script>
+</body>
+</html>
