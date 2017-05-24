@@ -12,7 +12,6 @@ function handlerErr(err) {
   this.emit('end');
 }
 
-
 gulp.task('server', ['build', 'sass'], function() {
   browserSync.init({
     server: {
@@ -26,7 +25,7 @@ gulp.task('build', function() {
       .pipe(gulp.dest('public'));
 })
 
-gulp.task('rebuild', ['build'], function() {
+gulp.task('rebuild', ['build', 'cpJs'], function() {
   browserSync.reload();
 })
 
@@ -42,11 +41,18 @@ gulp.task('cp', function() {
       .pipe(gulp.dest('public'));
 })
 
+gulp.task('cpJs', function() {
+  gulp.src('app/**/*.js')
+      .pipe(gulp.dest('public'))
+      .pipe(browserSync.reload({stream: true}));
+})
+
 gulp.task('watch', function() {
   gulp.watch(['app/**/*.html'], ['rebuild']);
   gulp.watch(['app/**/*.scss'], ['sass']);
   gulp.watch(['app/**/*.png'], ['cp']);
+  gulp.watch(['app/**/*.js'], ['cpJs']);
 })
 
-gulp.task('default', ['server', 'watch', 'cp'])
+gulp.task('default', ['server', 'watch', 'cp', 'cpJs'])
 

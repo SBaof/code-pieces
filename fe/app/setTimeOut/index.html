@@ -8,21 +8,7 @@
 <body>
   <div id="myDiv"></div>
 
-  <script>
-    const div = document.getElementById("myDiv");
-
-setTimeout(function() {
-  if (!div.style.left) {
-    div.style.left = '0px';
-  }
-  let left = parseInt(div.style.left) + 1;
-  console.log('left: ', div.style.left, left);
-  div.style.left = left + 'px';
-  if (left < 200) {
-    setTimeout(arguments.callee, 10);
-  }
-}, 10);
-  </script>
+  <script src="./main.js"></script>
 
 </body>
 </html>
