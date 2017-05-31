@@ -1,0 +1,77 @@
+<html>  
+  <head>  
+    <title>count_down</title>  
+    <script type="text/javascript">  
+      var countDown = {  
+        flag: true,   
+        hour: 0,  
+        minutes: 0,  
+        minutesNew: 0,  
+        seconds: 0,  
+        show: 0,  
+        current: 0,  
+        length: 0,  
+        showTagId: null,  
+        // callback: null,  
+        countDownInner: function(vTimeLength){  
+          if (!this.flag) {  
+            return;  
+          }  
+          var that=this;  
+          this.current = vTimeLength;  
+          minutes = Math.floor(vTimeLength/60);  
+          seconds = Math.floor(vTimeLength%60);  
+          if (minutes >= 60){  
+            hour = Math.floor(minutes/60);  
+            minutesNew = Math.floor(minutes%60);  
+            show = hour + ":" + minutesNew + ":" + seconds;  
+          } else {  
+            show = minutes + ":" + seconds;  
+          }  
+          document.getElementById(this.showTagId).innerHTML = show;  
+          vTimeLength = vTimeLength - 1;  
+          if (vTimeLength > 0) {  
+            setTimeout(function(){that.countDownInner(vTimeLength);}, 1000);  
+          } else {  
+            setTimeout(function(){that.callback();}, 1000);  
+          }  
+        },  
+        run: function(vTimeLength, showTagId, callback) {  
+          if (!this.flag) {  
+            this.flag = true;  
+            this.countDownInner(this.current);  
+          } else if (showTagId) {  
+            this.length = vTimeLength;  
+            this.showTagId = showTagId;  
+            this.callback = callback;  
+            this.countDownInner(vTimeLength);      
+          }  
+        },  
+        stop: function(){  
+          this.flag = false;  
+        },   
+        restart: function(){  
+          this.flag = true;  
+          this.countDownInner(this.length);  
+        }  
+      };  
+
+function countDownStart() {  
+  countDown.run();  
+}  
+function countDownStop() {  
+  countDown.stop();  
+}  
+    </script>  
+  </head>  
+  <body>  
+    <div id="div_countDown"></div>  
+    <script type="text/javascript">  
+      countDown.run(100, 'div_countDown',function(){alert('12')});  
+    </script>  
+    <span>  
+      <button onclick="countDownStart();">start</button>  
+      <button onclick="countDownStop();">stop</button>  
+    </span>  
+  </body>  
+</html>  
