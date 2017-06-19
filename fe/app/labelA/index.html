@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    #foo {
+      width: 100%;
+      height: 100vh;
+      border: 3px solid #BADA55;
+    }
+    #bar {
+      width: 100%;
+      height: 100vh;
+      border: 3px solid red;
+    }
+    button {
+      position: fixed;
+      right: 30px;
+      bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+  <a href="weixin://http://bao.baijiabao.com">to wechat</a>
+  <img src="./foo.png" alt="#">
+
+
+  <button onclick="javascript:goToFoo();">to foo</button>
+
+  <h1><a href="#foo">foo</a></h1>
+  <div id="foo"></div>
+
+  <h1><a href="#bar">bar</a></h1>
+  <div id="bar"></div>
+
+  <script>
+    function goToFoo() {
+      window.location.hash = "#foo";
+      console.log('hash: ', window.location.hash);
+    }
+  </script>
+
+</body>
+</html>
