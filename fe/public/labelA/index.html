@@ -14,29 +14,44 @@
       height: 100vh;
       border: 3px solid red;
     }
-    button {
+    .toFoo {
       position: fixed;
       right: 30px;
       bottom: 30px;
     }
+
+    .toBar {
+      position: fixed;
+      right: 30px;
+      bottom: 90px;
+    }
+
   </style>
 </head>
 <body>
-  <a href="weixin://http://bao.baijiabao.com">to wechat</a>
-  <img src="./foo.png" alt="#">
-
-
-  <button onclick="javascript:goToFoo();">to foo</button>
+  <button class="toFoo" onclick="javascript:goToFoo();">to foo</button>
+  <button class="toBar" onclick="javascript:goToBar();">to bar</button>
 
   <h1><a href="#foo">foo</a></h1>
-  <div id="foo"></div>
+  <div id="foo">foo</div>
 
   <h1><a href="#bar">bar</a></h1>
-  <div id="bar"></div>
+  <div id="bar">bar</div>
 
   <script>
     function goToFoo() {
-      window.location.hash = "#foo";
+      let hash = window.location.hash;
+      if (hash != '#foo') {
+        window.location.hash = "#foo";
+      }
+      console.log('hash: ', window.location.hash);
+    }
+
+    function goToBar() {
+      let hash = window.location.hash;
+      if (hash != '#bar') {
+        window.location.hash = "#bar";
+      }
       console.log('hash: ', window.location.hash);
     }
   </script>
