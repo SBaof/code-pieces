@@ -45,7 +45,7 @@
         const github = 'https://sbaof.github.io/code-pieces/fe/public/';
         arrLi.forEach((item) => {
           item.addEventListener('click', () => {
-            const href = item.querySelector('a').href;
+            let href = item.querySelector('a').href;
             const action = href.split('/').pop();
             console.log(href);
             var githubRegex = new RegExp('github', 'i');
