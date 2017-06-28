@@ -1,40 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>test</title>
-  <link rel="stylesheet" href="main.css">
+    <meta charset="UTF-8">
+    <title>test</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
-  <ul>
-    <li>
-        <span><a href="/calculate">Js安全计算-乘法</a></span>
-    </li>
-    <li>
-      <span><a href="/countDown">倒计时</a></span>
-    </li>
-    <li>
-      <span><a href="/echarts">echarts demo</a></span>
-    </li>
-    <li>
-      <span><a href="/labelA">标签-&lt;a&gt;相关内容</a></span>
-    </li>
-    <li>
-      <span><a href="scaleUp"> 等比缩放</a></span>
-    </li>
-    <li>
-      <span><a href="/setTimeout">setTimeout实践</a></span>
-    </li>
-    <li>
-      <span><a href="/snow">下雪特效</a></span>
-    </li>
-    <li>
-      <span><a href="/typing/201501131635">打字效果</a></span>
-    </li>
-    <li>
-      <span>...</span>
-    </li>
-  </ul>
+    <div class="container">
+      <ul>
+          <li>
+              <span><a href="/calculate">Js安全计算-乘法</a></span>
+          </li>
+          <li>
+              <span><a href="/countDown">倒计时</a></span>
+          </li>
+          <li>
+              <span><a href="/echarts">echarts demo</a></span>
+          </li>
+          <li>
+              <span><a href="/labelA">标签-&lt;a&gt;相关内容</a></span>
+          </li>
+          <li>
+              <span><a href="scaleUp"> 等比缩放</a></span>
+          </li>
+          <li>
+              <span><a href="/setTimeout">setTimeout实践</a></span>
+          </li>
+          <li>
+              <span><a href="/snow">下雪特效</a></span>
+          </li>
+          <li>
+              <span><a href="/typing/201501131635">打字效果</a></span>
+          </li>
+          <li>
+              <span>...</span>
+          </li>
+      </ul>
+    </div>
+    <script>
+      (function() {
+        const arrLi = document.querySelectorAll('li');
+        const github = 'https://sbaof.github.io/code-pieces/fe/public/';
+        arrLi.forEach((item) => {
+          item.addEventListener('click', () => {
+            const href = item.querySelector('a').href;
+            const action = href.split('/').pop();
+            console.log(href);
+            var githubRegex = new RegExp('github', 'i');
+            if (githubRegex.test(href)) {
+              href = github + action;
+            }
+            window.location.href = href;
+          })
+        });
+      })();
+    </script>
 </body>
+
 </html>
