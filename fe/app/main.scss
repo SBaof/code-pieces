@@ -1,5 +1,5 @@
 * {
-	// list-style: none;
+	list-style: none;
 	padding: 0;
 	margin: 0;
 }
@@ -19,6 +19,9 @@
 			padding: 10px;
 			a {
 				text-decoration: none;
+				&:link {
+					color: black;
+				}
 				&:visited {
 					color: black;
 				}
