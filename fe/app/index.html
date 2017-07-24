@@ -39,6 +39,9 @@
               <span>...</span>
           </li>
       </ul>
+      <div>
+        <img src="https://expressdemo-pccukqerkm.now.sh/">
+      </div>
     </div>
     <script>
       (function() {
@@ -48,7 +51,6 @@
           item.addEventListener('click', () => {
             let href = item.querySelector('a').href;
             const action = href.split('/').pop();
-            console.log(href);
             var githubRegex = new RegExp('github', 'i');
             if (githubRegex.test(href)) {
               href = github + action;
