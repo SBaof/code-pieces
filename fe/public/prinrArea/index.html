@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>print area</title>
-    <link rel="stylesheet" href="main.css">
-  </head>
-  <body>
-    <div class="btn">
-      <button>print</button>
-    </div>
+<head>
+  <meta charset="UTF-8">
+  <title>print area</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="foo">
+    <h1>DCLOUD</h1>
+  </div>
+  <div class="btn">
+    <button>print</button>
+  </div>
 
-    <div class="btn1">
-      <button>window print</button>
-    </div>
-    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-    <script src="./jquery.PrintArea.js"></script>
-    <script>
-      $(document).ready(function(){
-        $(".btn").click(function(){
-          $(".foo").printArea();
-        });
-
-        $(".btn1").click(function(){
-          window.print();
-        });
+  <div class="btn1">
+    <button>print</button>
+  </div>
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="./jquery.PrintArea.js"></script>
+  <script>
+    $(document).ready(function(){
+      $(".btn").click(function(){
+        $(".foo").printArea();
       });
-    </script>
-  </body>
+
+      $(".btn1").click(function(){
+        window.print();
+      });
+    });
+  </script>
+</body>
 </html>
