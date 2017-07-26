@@ -1,0 +1,36 @@
+.foo {
+  /* border: 1px solid red; */
+  overflow: hidden;
+}
+
+button {
+  width: 100%;
+  text-align: right;
+}
+
+.bar {
+  /* border: 1px solid blue; */
+  transition: all .3s;
+  /* height: 100px; */
+  overflow: auto;
+  border: 1px solid red;
+}
+
+.visible {
+  display: block;
+}
+
+.no-visible {
+  /* transform: translateY(-100px) */
+}
+
+ul {
+  border: 1px solid blue;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  border: 1px solid #ccc;
+}
