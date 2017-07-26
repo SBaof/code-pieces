@@ -13,14 +13,16 @@ for (var i = 0; i < 100; i++) {
 	wrapper.appendChild(image);
 }
 
+var winHeight = screen.availHeight;
+
 const images = Array.from(document.querySelectorAll('img'));
 
 function loadImage() {
 	var nowHeight = document.body.scrollTop || document.documentElement.scrollTop;
-	console.log(nowHeight);
+	console.log('nowHeight: ', nowHeight, ' winHeight: ', winHeight);
 	if (images.length > 0) {
 		images.map((image, index) => {
-			if (nowHeight > image.offsetTop - 50) {
+			if (nowHeight + winHeight > image.offsetTop) {
 				image.src = image.dataset.src;
 				images.splice(index, 1);
 			}
