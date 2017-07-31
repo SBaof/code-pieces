@@ -1,0 +1,56 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none; }
+
+header {
+  padding: 10px;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  width: 100%; }
+  header li {
+    display: inline-block;
+    margin-right: 10px;
+    color: #000; }
+    header li:first-of-type:before {
+      content: 'By anchor: ';
+      margin-right: 10px; }
+    header li [href="#"] {
+      border-right: 1px solid red;
+      padding-right: 10px; }
+    header li #JtoThree:before {
+      content: 'By JQ: ';
+      margin-right: 10px; }
+    header li:hover {
+      color: #555; }
+
+.container .item {
+  height: 100vh;
+  border: 3px solid red;
+  padding: 40px; }
+
+.container .item-one {
+  margin-top: 30px; }
+
+.container .item-two {
+  border-color: blue; }
+
+.container .item-three {
+  border-color: green; }
+
+footer {
+  padding: 20px;
+  background-color: #36363d; }
+  footer li {
+    display: inline-block; }
+  footer button {
+    padding: 5px;
+    background-color: transparent;
+    color: #fff;
+    font-size: 20px;
+    border-color: #fff;
+    outline: none; }
+    footer button:hover {
+      cursor: pointer; }
