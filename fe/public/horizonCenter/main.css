@@ -1,0 +1,123 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+
+.content {
+  width: 100px;
+  height: 100px; }
+
+section {
+  height: 300px;
+  position: relative;
+  margin-bottom: 20px;
+  background-color: #002b36; }
+
+.pagination li {
+  line-height: 25px; }
+
+.pagination a {
+  display: block;
+  color: #f2f2f2;
+  text-shadow: 1px 0 0 #101011;
+  padding: 0 10px;
+  border-radius: 2px;
+  box-shadow: 0 1px 0 #5a5b5c inset, 0 1px 0 #080808;
+  background-image: -webkit-linear-gradient(top, #434345, #2f3032); }
+  .pagination a:hover {
+    text-decoration: none;
+    box-shadow: 0 1px 0 #f9bd71 inset, 0 1px 0 #0a0a0a;
+    background-image: -webkit-linear-gradient(top, #f48b03, #c87100); }
+
+.code-wrapper {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  background-color: #002b36;
+  color: #839496;
+  height: 300px;
+  width: 352px;
+  overflow: auto; }
+
+code {
+  display: bolck; }
+
+footer {
+  border-top: 5px solid #00a3cf;
+  background-color: #36363d;
+  margin-top: 30px;
+  padding: 25px 10px; }
+  footer span:first-of-type {
+    color: #ccc; }
+  footer a {
+    color: #fff; }
+
+.one {
+  border-color: red; }
+
+.two {
+  border-color: blue; }
+
+.one-wrapper {
+  height: 200px; }
+
+.one-center {
+  margin: 0 auto;
+  border: 1px solid red; }
+
+.pagination-one {
+  width: 280px;
+  margin-left: auto;
+  margin-right: auto; }
+  .pagination-one li {
+    display: inline;
+    float: left;
+    margin: 0 2px; }
+
+.pagination-tow {
+  text-align: center; }
+  .pagination-tow li {
+    display: inline-block; }
+
+.pagination-three {
+  float: left;
+  width: 100%;
+  position: relative; }
+  .pagination-three ul {
+    clear: left;
+    float: left;
+    position: relative;
+    left: 50%;
+    text-align: center; }
+    .pagination-three ul li {
+      display: block;
+      float: left;
+      position: relative;
+      right: 50%;
+      margin: 0 5px; }
+
+.pagination-four {
+  position: relative; }
+  .pagination-four ul {
+    position: absolute;
+    left: 50%; }
+    .pagination-four ul li {
+      margin: 0 5px;
+      float: left;
+      position: relative;
+      right: 50%; }
+
+.pagination-five {
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: center; }
+  .pagination-five li {
+    float: left;
+    margin: 0 5px; }
+
+.pagination-six {
+  width: fit-content;
+  margin: 0 auto; }
+  .pagination-six li {
+    float: left;
+    margin: 0 5px; }

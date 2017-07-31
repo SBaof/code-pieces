@@ -1,0 +1,27 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+.wrap {
+  width: 200vh;
+  height: 100vh;
+  background-color: #ccc;
+  overflow: auto;
+  display: flex; }
+
+.catalog {
+  border: 1px solid black;
+  width: 100vh;
+  height: 100%;
+  float: left;
+  /* position: fixed;
+  left: 0;
+  top: 0; */
+  z-index: 0; }
+
+.content {
+  width: 100vh;
+  height: 100vh;
+  background-color: #BADA55;
+  z-index: 1;
+  border: 2px solid red; }

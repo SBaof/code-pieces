@@ -1,0 +1,98 @@
+@import './common.scss';
+
+.one {
+	border-color: red;
+}
+
+.two {
+	border-color: blue;
+}
+
+.one-wrapper {
+	height: 200px;
+	// border: 1px solid blue;
+}
+
+.one-center {
+	margin: 0 auto;
+	border: 1px solid red;
+}
+
+.pagination-one {
+	width: 280px;
+	margin-left: auto;
+	margin-right: auto;
+	li {
+		display: inline;
+		float: left;
+		margin: 0 2px;
+	}
+}
+
+.pagination-tow {
+	text-align: center;
+	li {
+		display: inline-block;
+	}
+}
+
+.pagination-three {
+	float: left;
+	width: 100%;
+	// overflow: hidden;
+	position: relative;
+	ul {
+		clear: left;
+		float: left;
+		position: relative;
+		left: 50%;
+		text-align: center;
+		li {
+			display: block;
+			float: left;
+			position: relative;
+			right: 50%;
+			// margin-right: 5px;
+			margin: 0 5px;
+		}
+	}
+}
+
+.pagination-four {
+	position: relative;
+	ul {
+		position: absolute;
+		left: 50%;
+		li {
+			// line-height: 25px;
+			margin: 0 5px;
+			float: left;
+			position: relative;
+			right: 50%;
+		}
+	}
+}
+
+.pagination-five {
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+	-webkit-box-pack: center;
+	li {
+		float: left;
+		margin: 0 5px;
+	}
+}
+
+.pagination-six {
+	// width: -webkit-fit-content;
+	width: fit-content;
+	margin: 0 auto;
+	li {
+		float: left;
+		margin: 0 5px;
+	}
+}
+
+
+
+
