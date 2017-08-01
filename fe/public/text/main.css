@@ -1,0 +1,22 @@
+* {
+  padding: 0;
+  margin: 0;
+  user-select: none; }
+
+.container {
+  display: flex;
+  justify-content: center; }
+
+.item {
+  font-size: 50px;
+  font-weight: 500;
+  margin: 20px 0;
+  border-top: 2px solid #ecd018;
+  border-bottom: 2px solid #ecd018;
+  line-height: 1.4;
+  padding: 20px 0; }
+
+.text-one {
+  background-image: -webkit-gradient(linear, 0% 50%, 25% 100%, from(#ff2c2c), to(#7a5e91));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
