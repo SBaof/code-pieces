@@ -2,61 +2,95 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>vertical center</title>
 	<link rel="stylesheet" href="main.css">
 </head>
 <body>
 	<section>
-		<label for="1">单杠文本 & 高度固定</label>
+		<label for="1">0. .parent 高度不定，.child：padding: 10px 0;</label>
+		<div class="parent">
+			<div class="child">
+				啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦
+			</div>
+		</div>
+	</section>
+	<section>
+		<label for="1">1. 单行文本 & 高度固定：line-height = height</label>
 		<div class="vertical-one">
 			content
 		</div>
 	</section>
 	<section>
-		<label for="1">绝对定位 + top + margin-top</label>
+		<label for="1">2. 绝对定位 + 负 margin： margin-top: -50%;</label>
 		<div class="vertical">
 			<div class="vertical-two">
-				content<br>
-				content<br>
-				content<br>
-				content<br>
+				<p>content</p>
+				<p>content</p>
+				<p>content</p>
+				<p>content</p>
 			</div>
 		</div>
 	</section>
 	<section>
-		<label for="1">display: table</label>
-		<div class="vertical vertical-container-one">
-			<div class="vertical-three">
-				content<br>
-				content<br>
-				content<br>
-				content<br>
-				content<br>
-				content<br>
-				content<br>
-			</div>
-		</div>
+		<label for="1">3. 原生 table 自带功能</label>
+		<table class="vertical vertical-container-one">
+			<tr>
+				<td class="vertical-three">啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</td>
+			</tr>
+		</table>
 	</section>
 	<section>
-		<label for="1">display: table-cell;</label>
+		<label for="1">4. display: table</label>
 		<div class="vertical vertical-container-two">
-			<div class="vertical-four">
-				content<br>
-				content<br>
-				content<br>
-				content<br>
-				content<br>
-				content<br>
-				content<br>
+			<div class="vertical-three">
+				<p>content</p>
+				<p>content</p>
+				<p>content</p>
+				<p>content</p>
+				<p>content</p>
 			</div>
 		</div>
 	</section>
+	<section>
+		<label for="1">5. 100% 高度的 after before + inline-block</label>
+		<div class="vertical vertical-container-three">
+			<span class="before"></span><div class="vertical-four">
+				啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦
+			</div><span class="after"></span>
+		</div>
+	</section>
+	<section>
+		<label for="1">6. translate: transform(-50%)</label>
+		<div class="vertical vertical-container-four">
+			<div class="vertical-five">
+				啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦
+			</div>
+		</div>
+	</section>
+	<section>
+		<label for="1">7. absolute + margin: auto;</label>
+		<div class="vertical vertical-container-five">
+			<div class="vertical-six">
+				啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦
+			</div>
+		</div>
+	</section>
+	<section>
+		<label for="1">8. flex</label>
+		<div class="vertical vertical-container-six">
+			<div class="vertical-seven">
+				啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦
+			</div>
+		</div>
+	</section>
+	
 	 <footer>
-	   <p>
+	   <!-- <p>
 	     <span>原文：</span>
 	     <span><a href="http://www.w3cplus.com/css/vertically-center-content-with-css">
 	       元素垂直居中</a></span>
-	   </p>
+	   </p> -->
 	</footer>
 </body>
 </html>

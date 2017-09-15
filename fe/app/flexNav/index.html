@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>flex nav</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div class="container">
+    	<header class="header-wrapper">
+    		<span>This is header</span>
+    	</header>
+
+        <nav class="flex-nav">
+        	<a href="javascript:void(0);" class="show-nav">=</a>
+        	<ul class="nav-container">
+        	    <li>
+        	        <a href="javascript:void(0);">Item 1</a>
+        	    </li>
+        	    <li>
+        	    	<a href="javascript:void(0);">Item 2</a>
+        	    </li>
+        	    <li>
+        	    	<a href="javascript:void(0);">Item 3</a>
+        	    </li>
+        	    <li>
+        	    	<a href="javascript:void(0);">Item 4</a>
+        	    </li>
+        	    <li>
+        	    	<a href="javascript:void(0);">Item 5</a>
+        	    </li>
+        	    <li>
+        	    	<a href="javascript:void(0);">Item 6</a>
+        	    </li>
+        	    <li class="emoji">
+        	    	<a href="javascript:void(0);">😈</a>
+        	    </li>
+        	    <li class="emoji">
+        	    	<a href="javascript:void(0);">😉</a>
+        	    </li>
+        	    <li class="emoji">
+        	    	<a href="javascript:void(0);">😱</a>
+        	    </li>
+        	    <li class="emoji">
+        	    	<a href="javascript:void(0);">😳</a>
+        	    </li>
+        	</ul>
+        </nav>
+
+        <section class="content">
+        	<img src="http://lorempixel.com/1000/600/abstract" alt="#">
+        </section>
+
+        <section class="detail">
+        	<p>this is a flex-box basied page</p>
+        	<p>If I rest,I rust</p>
+        </section>
+
+        <section class="signup-wrapper">
+        	<form action="" class="signup">
+        		<input type="text" placeholder="name">
+        		<input type="text" placeholder="email">
+        		<input type="submit" value="sign up">
+        	</form>
+        </section>
+
+        <footer>
+        	<p>&copy; dcloud</p>
+        </footer>
+    </div>
+    <script>
+    	var showNav = document.querySelector('.show-nav');
+    	var navContainer = document.querySelector('.nav-container');
+    	showNav.addEventListener('click', function () {
+    		if ([...navContainer.classList].indexOf('open') >= 0) {
+    			navContainer.classList.remove('open');
+    		} else {
+	    		navContainer.classList.add('open');
+    		}
+    	})
+
+    </script>
+</body>
+
+</html>

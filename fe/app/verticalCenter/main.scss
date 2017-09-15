@@ -1,30 +1,41 @@
 @import 'common.scss';
 
+.parent {
+	border: 4px solid #58a;
+	.child {
+		padding: 10px 0;
+		border: 2px solid #644;
+	}
+}
+
 .vertical-one {
 	height: 100px;
 	line-height: 100px;
-	border: 1px solid red;
+	border: 4px solid #644;
 }
 
 .vertical {
-	border: 1px solid red;
-	height: 200px;
+	border: 4px solid #58a;
+	height: 400px;
 	position: relative;
 }
 
 .vertical-two {
 	border: 1px solid blue;
 	height: 100px;
+	width: 100px;
 	position: absolute;
 	top: 50%;
-	margin-top: -50px;
-	width: 100px;
 	left: 50%;
+	margin-top: -50px;
 	margin-left: -50px;
-	// overflow: auto;
 }
 
 .vertical-container-one {
+	width: 100%;
+}
+
+.vertical-container-two {
 	display: table;
 	width: 100%;
 	.vertical-three {
@@ -33,16 +44,68 @@
 	}
 }
 
-.vertical-container-two {
-	display: table;
-	// text-align: center;
-	width: 100%;
-	// height: 100%;
+.vertical-container-three {
+	text-align: center;
 	.vertical-four {
-		display: table-cell;
+		border: 3px solid #58a;
+		width: 300px;
+
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.before {
+		outline: 3px solid #644;
+		display: inline-block;
+		height: 100%;
+		vertical-align: middle;
+	}
+	.after {
+		outline: 3px solid #644;
+		display: inline-block;
+		height: 100%;
 		vertical-align: middle;
 	}
 }
+
+.vertical-container-four {
+	position: relative;
+	.vertical-five {
+		width: 300px;
+		border: 3px solid #644;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+.vertical-container-five {
+	position: relative;
+	.vertical-six {
+		width: 300px;
+		height: 200px;
+		border: 3px solid #644;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		margin: auto;
+	}
+}
+
+.vertical-container-six {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	.vertical-seven {
+		width: 300px;
+		border: 3px solid #644;
+	}
+}
+
+
+
 
 
 
