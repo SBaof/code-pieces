@@ -39,6 +39,7 @@ a:hover {
   display: flex; }
 
 .nav-wrapper li {
+  border: 1px solid blue;
   display: flex;
   flex: 2;
   justify-content: center; }

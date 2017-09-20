@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="welcome" hidden data-foo="bar">
+		
+	</div>
+	<form name="signUp">
+		<input type="text" name="username" >
+		<input type="email" name="email">
+		<input type="password" name="password">
+		<input type="submit" value="signup">
+	</form>
+
+	<form name="signIn">
+		<input type="text" name="username" >
+		<!-- <input type="email" name="email"> -->
+		<input type="password" name="password">
+		<input type="submit" value="signin">
+	</form>
+
+	<button id="logout">logout</button>
+
+	<script src="//cdn1.lncld.net/static/js/3.2.1/av-min.js"></script>
+	<script>
+		var APP_ID = 'BOpcM7C4gKB0E8YyvniiNatJ-gzGzoHsz';
+		var APP_KEY = '1iOtyAEUMlEs3krmVtUVhyBy';
+
+		AV.init({
+		  appId: APP_ID,
+		  appKey: APP_KEY
+		});
+
+		logout.addEventListener('click', () => {
+			AV.User.logOut();
+			// window.location.reload();
+			welcome.setAttribute('hidden', true);
+		})
+
+		const currentUser = AV.User.current();
+		if (currentUser) {
+			welcome.innerHTML = currentUser.attributes.username + ', welcome~';
+			welcome.removeAttribute('hidden')
+		} else {
+			console.log('please login');
+		}
+
+		let signUp = document.querySelector('form[name=signUp]');
+		signUp.addEventListener('submit', (e) => {
+			e.preventDefault();
+			const name = signUp.username.value;
+			const email = signUp.email.value;
+			const password = signUp.password.value;
+			  // 新建 AVUser 对象实例
+			var user = new AV.User();
+			// 设置用户名
+			user.setUsername(name);
+			// 设置密码
+			user.setPassword(password);
+			// 设置邮箱
+			user.setEmail(email);
+			user.signUp().then((user) => {
+				console.log('signup succeed: ', user);
+				welcome.innerHTML = `${user.attributes.username}, welcome~`;
+				welcome.removeAttribute('hidden');
+			}, function (error) {
+				console.log(error);
+			});
+		})
+
+		let signIn = document.querySelector('form[name=signIn]');
+		signIn.addEventListener('submit', (e) => {
+			e.preventDefault();
+			AV.Cloud.requestSmsCode('17600903095').then(function (success) {
+		  }, function (error) {
+		  });
+			 AV.User.signUpOrlogInWithMobilePhone('17600903095', '900420').then(function (success) {
+			    // 成功
+			    console.log('succeed', success);
+			  }, function (error) {
+			    // 失败
+			  });
+			const name = signIn.username.value;
+			const password = signIn.password.value;
+			  AV.User.logIn(name, password).then((user) => {
+			    welcome.innerHTML = `${user.attributes.username}, welcome~`;
+				welcome.removeAttribute('hidden');
+			  }, function (error) {
+			  	console.log(error);
+			  	if (error.code === 211) {
+			  		alert('error: user is not exist');
+			  	} else if (error.code === 201) {
+			  		alert('error: username & password not match');
+			  	}
+			  });
+		})
+	</script>
+</body>
+</html>
