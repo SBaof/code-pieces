@@ -1,0 +1,40 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none; }
+
+.wrapper {
+  border: 2px solid red;
+  height: 500px; }
+
+ul {
+  border: 1px solid;
+  width: 500px;
+  margin: 0 auto;
+  text-align: center; }
+
+ul li {
+  display: inline-block;
+  width: 245px; }
+
+li:first-child:focus {
+  background: #644; }
+
+.target {
+  width: 500px;
+  height: 300px;
+  border: 1px solid;
+  margin: 0 auto;
+  display: none; }
+
+#target1 {
+  /* display: block; */ }
+
+#target1:target {
+  display: block;
+  background-color: #644; }
+
+#target2:target {
+  display: block;
+  background-color: #58a; }

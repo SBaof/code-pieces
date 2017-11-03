@@ -1,0 +1,414 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>Visual Stylin' - Section 9 - Transforms</title>
+<link href=
+'http://fonts.googleapis.com/css?family=Anton|Niconne|Prata|Trocchi|Open+Sans:300italic,300|Open+Sans+Condensed:700|Comfortaa:400,700,300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="code_examples_base.css" />
+<style>
+.basic_transforms {
+	width:300px;
+	height:100px;
+	margin:10px 0px 70px;
+	padding:10px;
+	border:1px dashed #AAA;
+	position:relative;
+	text-align:center;
+	border-radius:6px;
+	}
+.gradient {
+	border:1px solid #AAA;
+	background-color:#EEE;
+	background: -moz-linear-gradient(#AAA, #FFF);
+	background: -ms-linear-gradient(#AAA, #FFF);
+	background: -webkit-linear-gradient(#AAA, #FFF);
+	background: -o-linear-gradient(#AAA, #FFF);
+	background: linear-gradient(#AAA, #FFF);
+	}
+
+.basic_transforms code { /* code next to the Stylin' text transforms */
+	position:absolute;
+	left:340px; 
+	top:0px;
+	width:400px;
+	text-align:left;
+	}
+figure pre { /* code under other figures */
+	position:static;
+	margin-left:10px;
+	}
+
+/* two basic rounded corners demo */
+.basic_transforms h1 {
+	font: 50px/1 "Arial Black";
+	border:1px solid;
+	border-radius:6px;
+	padding:0px 0 10px;
+	margin-top:18px;
+	background:#17A6C3;
+	color:#FFF;
+	}	
+.basic_transforms.fig79_2 h1 {	
+	-moz-transform: rotate(20deg);
+	-webkit-transform: rotate(20deg);
+	transform: rotate(20deg);
+	color:#FFF;
+	}
+.basic_transforms.fig79_3 h1 {	
+	-moz-transform: rotate(20deg) skew(20deg);
+	-webkit-transform: rotate(20deg) skew(20deg);
+	transform: rotate(20deg) skew(20deg);
+	}
+.basic_transforms.fig79_4 h1 {	
+	-moz-transform: rotate(20deg) skew(20deg) translate(-40px, 20px);
+	-webkit-transform: rotate(20deg) skew(20deg) translate(-40px, 20px);
+	transform: rotate(20deg) skew(20deg) translate(-40px, 20px);
+	}
+.basic_transforms.fig79_5 h1 {	
+	-moz-transform: rotate(20deg) skew(20deg) scale(1.25);
+	-webkit-transform: rotate(20deg) skew(20deg) scale(1.25);
+	transform: rotate(20deg) skew(20deg) scale(1.25);
+	}
+.basic_transforms.fig80_2 h1 {
+	-moz-transform: rotate(20deg);
+	-webkit-transform: rotate(20deg);
+	transform: rotate(20deg);
+	}
+.basic_transforms.fig80_3 h1 {
+	-moz-transform: rotate(20deg);
+	-moz-transform-origin: left top;
+	-webkit-transform: rotate(20deg);
+	-webkit-transform-origin: left top;
+	transform: rotate(20deg);
+	transform-origin: left top;
+	}
+.basic_transforms.fig80_4 h1 {
+	-moz-transform: rotate(-20deg);
+	-moz-transform-origin: right bottom;
+	-webkit-transform: rotate(-20deg);
+	-webkit-transform-origin: right bottom;
+	transform: rotate(-20deg);
+	transform-origin: right bottom;
+	}
+
+.shadow_transforms {
+	width:300px;
+	height:100px;
+	margin:10px 0px 20px;
+	padding:10px;
+	border:0px solid #069;
+	position:relative;
+	}
+
+/* DEMO - letter with cast shadow */
+.shadow_transforms.fig81 h1, .shadow_transforms.fig89 h1 {
+	margin:0;
+	padding:0;
+	font: 130px/.8 Trocchi, serif;	
+	color:hsla(31,100%,54%,.8);
+	
+	text-shadow:
+	1px -1px 0 #999,
+	2px -2px 0 #BBB,
+	3px -3px 0 #DDD;
+	
+	position:relative;	
+	z-index:20;
+	}
+.shadow_transforms.fig81 h1:before, .shadow_transforms.fig89 h1:before {
+	content:attr(title);
+	color:transparent;
+	position:absolute;
+	text-shadow: 0 0 5px hsla(120,0%,70%,.8);
+	
+	-moz-transform-origin: bottom center;
+	-webkit-transform-origin: bottom center;
+	-ms-transform-origin: bottom center;
+	-o-transform-origin: bottom center;
+	transform-origin: bottom center;
+	
+	-moz-transform: skewX(-70deg);
+	-webkit-transform: skewX(-70deg);
+	-ms-transform: skewX(-70deg);
+	-o-transform: skewX(-70deg);
+	transform: skewX(-70deg);
+	
+	left:-16px;
+	z-index:-1;
+	}
+/* DEMO - letter with cast shadow */
+
+/* 3-D letter only */
+.shadow_transforms.fig82 h1 {
+	margin:0;
+	padding:0;
+	font: 130px/.8 Trocchi, serif;	
+	color:hsla(31,100%,54%,.8);
+	
+	text-shadow:
+	/* 1st val = pos to right, neg to left
+	    2nd value = pos down, neg up    */
+	1px -1px 0 #999,
+	2px -2px 0 #BBB,
+	3px -3px 0 #DDD;
+	}
+
+/* 3-D letter + added content */
+.shadow_transforms.fig85 h1 {
+	margin:0;
+	padding:0;
+	font: 130px/.8 Trocchi, serif;	
+	color:hsla(31,100%,54%,.8);
+	z-index:100;
+	
+	text-shadow:
+	/* 1st val = pos to right, neg to left
+	    2nd value = pos down, neg up    */
+	1px -1px 0 #999,
+	2px -2px 0 #BBB,
+	3px -3px 0 #DDD;
+	}
+.shadow_transforms.fig85 h1:before {
+content:attr(title);
+text-shadow:none; /* turn off '3-D' shadows */
+text-shadow:1px -1px 0 #555
+	}
+
+.shadow_transforms.fig87 h1 {
+	margin:0;
+	padding:0;
+	font: 130px/.8 Trocchi, serif;	
+	color:hsla(31,100%,54%,.8);
+
+	position:relative;
+	
+	text-shadow:
+	/* 1st val = pos to right, neg to left
+	    2nd value = pos down, neg up    */
+	1px -1px 0 #999,
+	2px -2px 0 #BBB,
+	3px -3px 0 #DDD;
+	}
+.shadow_transforms.fig87 h1:before {
+	content:attr(title);
+	text-shadow:none; /* turn off '3-D' shadows */
+	text-shadow:1px -1px 0 #555;
+	
+	color:transparent;
+	position:absolute;
+	
+	-moz-transform-origin: bottom center;
+	-webkit-transform-origin: bottom center;
+	-ms-transform-origin: bottom center;
+	-0-transform-origin: bottom center;
+	transform-origin: bottom center;
+	
+	-moz-transform: skewX(-70deg);
+	-webkit-transform: skewX(-70deg);
+	-ms-transform: skewX(-70deg);
+	-o-transform: skewX(-70deg);
+	transform: skewX(-70deg);
+	left:-16px;
+	z-index:-1;
+	}
+</style>
+</head>
+
+<body>
+<div id="wrapper">
+
+	<p>Code examples from <a href="http://stylinwithcss.com/visual_stylin.php">Visual Stylin' with CSS3</a> by Charles Wyke-Smith</p>
+	<h1>Section 9 &#8226; Transforms</h1>
+
+	<figure>
+    	<div class="basic_transforms fig79_1">
+      	<h1>Stylin'</h1>
+      	<pre><code>font:50px/1 "Arial Black";
+border:1px solid;
+padding:0px 0 10px;
+margin-top:18px;
+color:#17A6C3;</code></pre>
+      	</div>
+      	<div class="basic_transforms fig79_2">
+      	<h1>Stylin'</h1>
+      	<pre><code>-moz-transform: rotate(20deg);
+-webkit-transform: rotate(20deg);
+transform: rotate(20deg);</code></pre>
+      	</div>
+      	<div class="basic_transforms fig79_3">
+      	<h1>Stylin'</h1>
+      	<code>-moz-transform: rotate(20deg) skew(20deg);
+-webkit-transform: rotate(20deg) skew(20deg);
+transform: rotate(20deg) skew(20deg);</code>
+      	</div>
+      	<div class="basic_transforms fig79_4">
+      	<h1>Stylin'</h1>
+      	<code>-moz-transform: rotate(20deg) skew(20deg) translate(-40px, 20px);
+-webkit-transform: rotate(20deg) skew(20deg) translate(-40px, 20px);
+transform: rotate(20deg) skew(20deg) translate(-40px, 20px);</code></div>
+      	<div class="basic_transforms fig79_5">
+      	<h1>Stylin'</h1>
+      	<code>-moz-transform: rotate(20deg) skew(20deg)  scale(1.25);
+-webkit-transform: rotate(20deg) skew(20deg)  scale(1.25);
+transform: rotate(20deg) skew(20deg)  scale(1.25);</code>
+      	</div>
+      	<figcaption><span>Figure 79:</span> The basic transforms&mdash;rotate, skew, translate, and scale&mdash;are applied to a text element.
+      	</figcaption>
+	</figure>
+
+	<figure>
+    	<div class="basic_transforms fig80_1">
+     	<h1>Stylin'</h1>
+		<pre><code><em>no transform applied</em></code></pre>
+        </div>
+       	<div class="basic_transforms fig80_2">
+      	<h1>Stylin'</h1>
+		<pre><code>-moz-transform:rotate(20deg);
+-webkit-transform:rotate(20deg);
+transform:rotate(20deg);
+</code></pre>
+        </div>
+        <div class="basic_transforms fig80_3">
+      	<h1>Stylin'</h1>
+		<pre><code>-moz-transform-origin:left top;
+-webkit-transform-origin:left top;
+transform:rotate(20deg);
+</code></pre>
+        </div>
+        <div class="basic_transforms fig80_4">
+      	<h1>Stylin'</h1>
+<pre><code>-moz-transform:rotate(-20deg);
+-webkit-transform:rotate(-20deg);
+transform:rotate(-20deg);
+-moz-transform-origin:right bottom;
+-webkit-transform-origin:right bottom;
+transform-origin:right bottom;</code></pre>
+        </div>
+		<figcaption><span>Figure 80:</span> The transform-origin is set to the center (default), top-left, and bottom-right corners of the element.</figcaption>
+	</figure>
+
+	<figure>
+	<div class="shadow_transforms fig81">
+    <h1 title="K">K</h1>
+	</div>
+	<figcaption><span>Figure 81:</span> Using the <code>:before</code> pseudo-class, a shadow is added to a large letter. The following figures show step-by-step how this effect is created. See Figure 88 for the complete CSS.</figcaption>
+	</figure>
+
+	<figure>
+	<div class="shadow_transforms fig82">
+    <h1>K</h1>
+	<pre><code></code></pre>
+	</div>
+	<pre><code> h1 {
+    margin:0;
+    padding:0;
+    font: 130px/.8 Trocchi, serif;	
+    
+    color:hsla(31,100%,54%,.8);
+    
+    text-shadow:
+        1px -1px 0 #999,
+        2px -2px 0 #BBB,
+        3px -3px 0 #DDD;
+    }</code></pre>
+	<figcaption><span>Figure 82:</span> Three offset shadows are added to the letter to give it thickness.<br>
+	</figcaption>
+	</figure>
+
+	<figure>
+		<pre><code>
+&lt;h1 <strong>title="K"</strong>>K&lt;/h1>
+    </code></pre>
+		<figcaption><span>Figure 84:</span>The content of the h1 element's tag is also added to its <code>title</code> tag.</figcaption>
+	</figure>
+
+	<figure>
+		<div class="shadow_transforms fig85">
+      	<h1 title="K">K</h1>
+		</div>
+		<pre><code>	
+h1:before {
+    content:attr(title);
+    text-shadow:none; /* turn off '3-D' shadows */
+    text-shadow:1px -1px 0 #555;
+    }
+    </code></pre>
+    	<figcaption><span>Figure 85:</span> The <code>:before</code> pseudo-class is used to add a copy of the letter.</figcaption>
+	</figure>
+
+	<figure>
+		<div class="shadow_transforms fig87">
+      	<h1 title="K">K</h1>
+		</div>
+    	<pre><code>h1 {
+    margin:0;
+    padding:0;
+    font: 130px/.8 Trocchi, serif;	
+    color:hsla(31,100%,54%,.8);
+    
+    position:relative;
+    
+    text-shadow:
+        1px -1px 0 #999,
+        2px -2px 0 #BBB,
+        3px -3px 0 #DDD;
+        }
+    .shadow_transforms.demo13 h1:before {
+    content:attr(title);
+    text-shadow:none; /* turn off '3-D' shadows */
+    text-shadow:1px -1px 0 #555;
+    }
+    </code></pre>
+    	<figcaption><span>Figure 87:</span> Now I make the type color transparent so only the shadow is visible and move it into position.</figcaption>
+	</figure>
+
+	<figure>
+		<div class="shadow_transforms fig89">
+      	<h1 title="K">K</h1>
+		<pre><code></code></pre>
+		</div>
+		<pre><code>h1 {
+    margin:0;
+    padding:0;
+    font: 130px/.8 Trocchi, serif;	
+    color:hsla(31,100%,54%,.8);
+    
+    position:relative;
+    
+    text-shadow:
+        1px -1px 0 #999,
+        2px -2px 0 #BBB,
+        3px -3px 0 #DDD;
+    }
+h1:before {
+    content:attr(title);
+    text-shadow:none; /* turn off '3-D' shadows */
+    text-shadow:1px -1px 0 #555;
+    
+    color:transparent;
+    position:absolute;
+    
+    -moz-transform-origin: bottom center;
+    -webkit-transform-origin: bottom center;
+    -ms-transform-origin: bottom center;
+    -0-transform-origin: bottom center;
+    transform-origin: bottom center;
+    
+    -moz-transform: skewX(-70deg);
+    -webkit-transform: skewX(-70deg);
+    -ms-transform: skewX(-70deg);
+    -o-transform: skewX(-70deg);
+    transform: skewX(-70deg);
+    left:-16px;
+    z-index:-1;
+    }</code></pre>
+    	<figcaption><span>Figure 88:</span>The shadow is now behind the letter, and diffused to look like a more realistic shadow.</figcaption>
+	</figure>
+
+</div>
+
+</body>
+
+</html>

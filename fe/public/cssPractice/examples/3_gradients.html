@@ -1,0 +1,349 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Visual Stylin' - Section 3 - Gradients</title>
+<link href=
+'http://fonts.googleapis.com/css?family=Anton|Niconne|Prata|Trocchi|Open+Sans:300italic,300|Open+Sans+Condensed:700|Comfortaa:400,700,300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="code_examples_base.css" />
+<style>
+/* GRADIENTS */
+
+.basic_gradients {
+	width:150px;
+	height:100px;
+	margin:10px 0 10px;
+	padding:10px;
+	border:1px solid #AAA;
+	position:relative;
+	border-radius: 5px;
+	}
+.basic_gradients_large {
+	width:450px;
+	height:300px;
+	margin:10px 50px 10px;
+	padding:10px;
+	float:left;
+	border:1px solid #AAA;
+	}
+.basic_gradients code {
+	display:inline-block;
+	position:absolute;
+	left:140px; 
+	top:10px;
+	margin-left:42px;
+	max-width:540px;
+	min-width:300px;
+	}
+figure pre.under {
+	margin:0;
+	}
+	
+/* three simple gradients examples */
+.basic_gradients.fig22_1 {
+	background-color:#EEE;
+	background: -moz-linear-gradient(#777, #FFF);
+	background: -ms-linear-gradient(#777, #FFF);
+	background: -webkit-linear-gradient(#777, #FFF);
+	background: -o-linear-gradient(#777, #FFF);
+	background: linear-gradient(#777, #FFF);
+	}
+.basic_gradients.fig22_2 {
+	background-color:#EEE;
+	background: -moz-linear-gradient(left, #AAA, #FFF);
+	background: -ms-linear-gradient(left, #AAA, #FFF);
+	background: -webkit-linear-gradient(left, #AAA, #FFF);
+	background: -o-linear-gradient(left, #AAA, #FFF);
+	background: linear-gradient(left, #AAA, #FFF);
+	}
+.basic_gradients.fig22_3 {
+	background-color:#EEE;
+	background: -moz-linear-gradient(-45deg, #AAA, #FFF);
+	background: -ms-linear-gradient(-45deg, #AAA, #FFF);
+	background: -webkit-linear-gradient(-45deg, #AAA, #FFF);
+	background: -o-linear-gradient(-45deg, #AAA, #FFF);
+	background: linear-gradient(-45deg, #AAA, #FFF);
+	}
+	
+.basic_gradients.fig23 {
+	height:300px;
+	width:250px;
+	margin:10px 0;
+	overflow:hidden;
+	background-color:#EEE;
+	border: 1px solid #DDD;
+	background: -moz-linear-gradient(#DDD, #FFF 20%);
+	background: -ms-linear-gradient(#DDD, #FFF 20%);
+	background: -webkit-linear-gradient(#DDD, #FFF 20%);
+	background: -o-linear-gradient(#DDD, #FFF 20%);
+	background: linear-gradient(#DDD, #FFF 20%);
+	box-shadow: 2px 2px 4px #EEE;
+	}
+.basic_gradients.fig23 h1 {
+	font-size: 24px;
+	color:#555;
+	text-align:center;
+	}
+.basic_gradients.fig23 h2 {
+	font-family:'open sans condensed', sans-serif;
+	font-size:1.75em;
+	color:#a7a9ac;
+	text-align:center;
+	}
+.basic_gradients.fig23 img {
+	height:300px;
+	margin:0 auto;
+	display:block;
+	}
+.basic_gradients.fig23 + code {
+	margin-left:200px;
+	}
+	
+.basic_gradients.fig25 {
+	border: 1px solid #DDD;
+	background-color:#EEE;
+	background: -moz-linear-gradient(left, #999, #fff 47%, #fff 52%, #999 100%);
+	background: -ms-linear-gradient(left, #999, #fff 47%, #fff 52%, #999 100%);
+	background: -webkit-linear-gradient(left, #999, #fff 47%, #fff 52%, #999 100%);
+	background: -o-linear-gradient(left, #999, #fff 47%, #fff 52%, #999 100%);
+	background: linear-gradient(left, #999, #fff 47%, #fff 52%, #999 100%);
+	box-shadow: 2px 2px 2px #CCC;
+	}
+
+.basic_gradients.fig27_1 {
+	background-color:#FFF;
+	background: -moz-radial-gradient(#FFF, #64d1dd, #777);
+	background: -ms-radial-gradient(#FFF, #64d1dd, #777);
+	background: -webkit-radial-gradient(#FFF, #64d1dd, #777);
+	background: -o-radial-gradient(#FFF, #64d1dd, #777);
+	background: radial-gradient(#FFF, #64d1dd, #777);
+	}
+.basic_gradients.fig27_2 {
+	background-color:#FFF;
+	background: -moz-radial-gradient(circle, #FFF, #64d1dd, #777);
+	background: -ms-radial-gradient(circle, #FFF, #64d1dd, #777);
+	background: -webkit-radial-gradient(circle, #FFF, #64d1dd, #777);
+	background: -o-radial-gradient(circle, #FFF, #64d1dd, #777);
+	background: radial-gradient(circle, #FFF, #64d1dd, #777);
+	}
+.basic_gradients.fig27_3 {
+	background-color:#FFF;
+	background: -moz-radial-gradient(50px 30px, circle, #FFF, #64d1dd, #777);
+	background: -ms-radial-gradient(50px 30px, circle, #FFF, #64d1dd, #777);
+	background: -webkit-radial-gradient(50px 30px, circle, #FFF, #64d1dd, #777);
+	background: -o-radial-gradient(50px 30px, circle, #FFF, #64d1dd, #777);
+	background: radial-gradient(50px 30px, circle, #FFF, #64d1dd, #777);
+	}
+.basic_gradients.fig28_1 {
+	background: -moz-radial-gradient(50px 30px, circle farthest-corner, #FFF, #64d1dd, #777);
+	background: -webkit-radial-gradient(50px 30px, circle farthest-corner, #FFF, #64d1dd, #777);
+	background: radial-gradient(50px 30px, circle farthest-side, #FFF, #64d1dd, #777);
+	}
+.basic_gradients.fig28_2 {
+	background: -moz-radial-gradient(50px 30px, circle farthest-side, #FFF, #64d1dd, #777);
+	background: -webkit-radial-gradient(50px 30px, circle farthest-side, #FFF, #64d1dd, #777);
+	background: radial-gradient(50px 30px, circle farthest-side, #FFF, #64d1dd, #777);
+	}
+.basic_gradients.fig28_3 {
+	background: -moz-radial-gradient(50px 30px, circle closest-corner, #FFF, #64d1dd, #777);
+	background: -webkit-radial-gradient(50px 30px, circle closest-corner, #FFF, #64d1dd, #777);
+	background: radial-gradient(50px 30px, circle closest-corner, #FFF, #64d1dd, #777);
+	}
+.basic_gradients.fig28_4 {
+	background: -moz-radial-gradient(50px 30px, circle closest-side, #FFF, #64d1dd, #777);
+	background: -webkit-radial-gradient(50px 30px, circle closest-side, #FFF, #64d1dd, #777);
+	background: radial-gradient(50px 30px, circle closest-side, #FFF, #64d1dd, #777);
+	}
+/* shaded sphere */
+.fig29 {
+	margin:20px 0 10px 0;
+	height:150px;
+	width:150px;
+	border:2px solid #DDD;
+	border-radius:50%; /* turns rectagular div into a circle */
+	background:-moz-radial-gradient(50px 40px,circle farthest-corner, #FFF, #ff58ba, #777);
+	background:-webkit-radial-gradient(50px 40px,circle farthest-corner, #FFF, #ff58ba, #777);
+	background:radial-gradient(50px 40px,circle farthest-corner, #FFF, #ff58ba, #777);
+	}
+.fig29 + figcaption {
+	display:block;
+	margin:90px 0 0 0;
+	
+	}
+.fig31 { /* body of cylinder */
+	margin:20px 0 30px;;
+	height:150px;
+	width:120px;
+	border-bottom:none;
+	background: -moz-linear-gradient(left, #777, #EEE 20%, #EEE 60%, #777 100%);
+	background: -webkit-linear-gradient(left, #777, #EEE 20%, #EEE 60%, #777 100%);
+	position:relative;
+	}
+.fig31:after { /* top oval */
+	content:"";
+	position:absolute;
+	height:20px;
+	width:120px;
+	top:-10px;
+	left:0px;
+	border-radius:50%;
+	background: -moz-radial-gradient(#EEE, #777);
+	background: -webkit-radial-gradient(#EEE, #777);
+	}
+.fig31:before { /* bottom oval */
+	content:"";
+	position:absolute;
+	height:20px;
+	width:120px;
+	bottom:-10px;
+	left:0px;
+	border-radius:50%;
+	background:-moz-linear-gradient(left, #777, #EEE 20%, #EEE 60%, #777 100%);
+	background:-webkit-linear-gradient(left, #777, #EEE 20%, #EEE 60%, #777 100%);
+	}	
+	
+</style>
+<body>
+<div id="wrapper">
+
+	<p>Code examples from <a href="http://stylinwithcss.com/visual_stylin.php">Visual Stylin' with CSS3</a> by Charles Wyke-Smith</p>
+	<h1>Section 3 &#8226; Gradients</h1>
+	<figure>
+    	<div class="basic_gradients fig22_1"><code>background: linear-gradient(#777, #FFF);</code></div>
+    	<div class="basic_gradients fig22_2"><code>background: linear-gradient(left, #AAA, #FFF);</code></div>
+    	<div class="basic_gradients fig22_3"><code>background: linear-gradient(-45deg, #AAA, #FFF);</code></div>
+
+		<figcaption><span>Figure 22:</span> Three simple gradients: default top to bottom, left to right, and top left (-45 degree rotation from top/center), respectively.
+        </figcaption>
+	</figure>
+
+	<figure>
+    	<div class="basic_gradients fig23">
+        	<h2>Think beyond the bulb</h2>
+            <img src="pics/light_bulb.png" alt="Light Bulb" />     
+        </div>
+        <pre class="under"><code>border: 1px solid #DDD;
+background: -moz-linear-gradient(#DDD, #FFF 20%);
+background: -ms-linear-gradient(#DDD, #FFF 20%);
+background: -webkit-linear-gradient(#DDD, #FFF 20%);
+background: -o-linear-gradient(#DDD, #FFF 20%);
+background: linear-gradient(#DDD, #FFF 20%);
+box-shadow: 2px 2px 4px #EEE;
+</code></pre>
+    
+		<figcaption><span>Figure 23:</span> A subtle gradient gives a professional touch.</figcaption>
+	</figure>
+
+	<figure>
+    	<div class="basic_gradients fig25">
+        </div>
+    
+    	<pre class="under"><code>border: 1px solid #DDD;
+background-color:#EEE;
+background: -moz-linear-gradient(left, #999, #fff 47%, #fff 52%, #999 100%);
+background: -ms-linear-gradient(left, #999, #fff 47%, #fff 52%, #999 100%);
+background: -webkit-linear-gradient(left, #999, #fff 47%, #fff 52%, #999 100%);
+background: -o-linear-gradient(left, #999, #fff 47%, #fff 52%, #999 100%);
+background: linear-gradient(left, #999, #fff 47%, #fff 52%, #999 100%);
+box-shadow: 2px 2px 2px #CCC;</code></pre>
+		<figcaption><span>Figure 25:</span>  A gradient with two stop points (as well as the start and end points) gives an interesting sense of depth.
+        </figcaption>
+	</figure>
+
+	<figure>
+    	<div class="basic_gradients fig27_1">
+        <pre><code>background: radial-gradient(#FFF, #64d1dd, #777);</code></pre>
+        </div>
+        <div class="basic_gradients fig27_2">
+        <pre><code>background: radial-gradient(circle, #FFF, #64d1dd, #777);</code></pre>
+        </div>
+        <div class="basic_gradients fig27_3">
+        <pre><code>radial-gradient(50px 30px, circle, #FFF, #64d1dd, #777);</code></pre>
+        </div>
+		<figcaption><span>Figure 27:</span> Three three-color radial gradients. The first is the default "fit-to-shape" gradient, the second is a circular gradient, and the third is a positioned circular gradient.
+        </figcaption>
+	</figure>
+
+	<figure>
+    	<div class="basic_gradients fig28_1">
+        <code>background: radial-gradient(50px 30px,circle farthest-corner, #FFF, #64d1dd, #777);</code>
+        </div>
+        <div class="basic_gradients fig28_2">
+        <code>background: radial-gradient(50px 30px, circle farthest-side, #FFF, #64d1dd, #777);</code>
+        </div>
+        <div class="basic_gradients fig28_3">
+        <code>background: radial-gradient(50px 30px, circle closest-corner, #FFF, #64d1dd, #777);</code>
+        </div>
+        <div class="basic_gradients fig28_4">
+        <code>background: radial-gradient(50px 30px, circle closest-side, #FFF, #64d1dd, #777);</code>
+        </div>
+		<figcaption><span>Figure 28:</span> The four radial gradient size keywords in action.</figcaption>
+	</figure>
+
+	<figure>
+		<div class="fig29">
+   		</div>
+        <pre class="under"><code>margin:50px 0 0 200px;
+height:150px;
+width:150px;
+border:2px solid #DDD;
+<strong>border-radius:50%;</strong> /* turns rectagular div into a circle */
+background:
+ -moz-radial-gradient(<strong>50px 40px</strong>, circle farthest-corner, 
+   #FFF, #ff58ba, #777);
+background:
+ -webkit-radial-gradient(<strong>50px 40px</strong>, circle farthest-corner, 
+ #FFF, #ff58ba, #777);
+background:
+ radial-gradient(<strong>50px 40px</strong>, circle farthest-corner,  
+   #FFF, #ff58ba, #777);
+</code></pre>
+		<figcaption><span>Figure 29:</span> A <code>div</code> with 50% rounded corners creates a circle, and a radial gradient background is positioned within it.
+        </figcaption>
+	</figure>
+
+	<figure>
+		<div class="fig31">
+   		</div>
+   		<pre class="under"><code>#cylinder {
+	margin:50px 200px;
+	height:150px;
+	width:120px;
+	border-bottom:none;
+	background: -moz-linear-gradient(left, #777, #FFF 20%, 
+ 	  #FFF 60%, #777 100%);
+	position:relative;
+	}
+#cylinder:after { /* top oval */
+	content:"";     /* empty text string */
+	position:absolute;
+	height:20px;
+	width:120px;
+	top:-10px;
+	left:0px;
+	border-radius:50%;
+	background: -moz-radial-gradient(#FFF, #777);
+	}
+#cylinder:before { /* bottom oval */
+	content:"";       /* empty text string */
+	position:absolute;
+	height:20px;
+	width:118px;
+	bottom:-10px;
+	left:-1px;
+	border-radius:50%;
+	border-bottom:2px solid #CCC;
+	border-left:2px solid #CCC;
+	border-right:2px solid #CCC;
+	background:-moz-linear-gradient(left, #777, 
+          #FFF 20%, #FFF 60%, #777 100%);
+	}
+</code></pre>
+		<figcaption><span>Figure 31:</span> A rectangle and two ellipses are carefully positioned to create a cylinder.</figcaption>
+	</figure>
+
+</div>
+
+</body>
+
+</html>

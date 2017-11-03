@@ -1,0 +1,345 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Visual Stylin' - Section 4 - Opacity and Alpha</title>
+<link href=
+'http://fonts.googleapis.com/css?family=Anton|Niconne|Prata|Trocchi|Open+Sans:300italic,300|Open+Sans+Condensed:700|Comfortaa:400,700,300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="code_examples_base.css" />
+<style>
+
+.basic_opacity {
+	height:150px;
+	margin:10px 0 10px;
+	/*padding:10px;*/
+	border-radius:8px;
+	/*border:1px solid #AAA;*/
+	}
+.basic_opacity code {
+	/*background:#FFC;
+	border:1px solid #AAA;
+	border-radius:3px;
+	box-shadow:2px 2px 4px #BBB;*/
+	display:inline-block;
+	padding:8px;
+	}
+figure pre {
+	margin:0;
+	}
+.basic_opacity.demo1 {
+	background:#CCC;
+	overflow:hidden;
+	height:100%;
+	}
+
+.basic_opacity.fig33 {
+	padding:5px;
+	background:none;
+	height:100%;
+	}
+.basic_opacity.fig33 img {
+	float:left:
+	}
+.basic_opacity.fig33 .spiral1 {
+	opacity:1;
+	}
+.basic_opacity.fig33 .spiral2 {
+	opacity:0.5;
+	}
+.basic_opacity.fig33 .spiral3 {
+	opacity:0.2;
+	}
+
+/* Opacity / Alpha demo */
+.basic_opacity.fig35 {
+	width:700px;
+	height:60px;
+	padding:0 0 0 0;
+	}
+.basic_opacity.fig35 p {
+	font-family:'Arial Bold', verdana, sans-serif;
+	font-size:54px;
+	line-height:.8; 
+	}
+.basic_opacity.fig35 .opaque {
+	color:hsla(200,50%,50%,1)
+	}	
+.basic_opacity.fig35 .point9 {
+	color:hsla(200,50%,50%,.9)
+	}	
+.basic_opacity.fig35 .point8 {
+	color:hsla(200,50%,50%,.8)
+	}	
+.basic_opacity.fig35 .point7 {
+	color:hsla(200,50%,50%,.7)
+	}	
+.basic_opacity.fig35 .point6 {
+	color:hsla(200,50%,50%,.6)
+	}	
+.basic_opacity.fig35 .point5 {
+	color:hsla(200,50%,50%,.5)
+	}	
+.basic_opacity.fig35 .point4 {
+	color:hsla(200,50%,50%,.4)
+	}	
+.basic_opacity.fig35 .point3 {
+	color:hsla(200,50%,50%,.3)
+	}	
+.basic_opacity.fig35 .point2 {
+	color:hsla(200,50%,50%,.2)
+	}	
+.basic_opacity.fig35 .point1 {
+	color:hsla(200,50%,50%,.1)
+	}
+	
+.basic_opacity.fig37 {
+	font-family:Arial Bold, verdana, sans-serif;
+	}
+.basic_opacity.fig37 .alpha {
+	font-size:130px;
+	line-height:1em;
+	margin:20px 0 0 3px;
+	height:auto;
+	}
+.basic_opacity.fig37 .alpha p {
+	font-family:Arial Bold, verdana, sans-serif;
+	}
+.basic_opacity.fig37 .alpha span{
+	font-weight:bold;
+	}
+.basic_opacity.fig37 .aph1 {
+	color:hsla(325,100%,65%,.5);
+	margin:0 0px 0 0px; /* negative left letter kerning */
+	}
+.basic_opacity.fig37 .aph2 {
+	color:hsla(31,100%,54%,.5);
+	margin:0 0 0 -30px; /* negative left letter kerning */
+	}
+.basic_opacity.fig37 .aph3 {
+	color:hsla(186,87%,55%,.5);
+	margin:0 0 0 -26px; /* negative left letter kerning */
+	}
+.basic_opacity.fig37 .aph4 {
+	color:hsla(31,100%,54%,.5);
+	margin:0 0 0 -30px; /* negative left letter kerning */
+	}
+.basic_opacity.fig37 .aph5 {
+	color:hsla(325,100%,65%,.5);
+	margin:0 0 0 -30px; /* negative left letter kerning */
+	}
+
+/* no opacity */
+.basic_opacity.fig40 {
+	width:220px;
+	float:left;
+	background:url(pics/pink_hydrangeas.png) no-repeat center;
+	margin:0 20px 0 0; /* positions code example next to image - remove */
+	}
+.basic_opacity.fig40 h2 {
+	margin:5px 0 0 4px;
+	font-family:Niconne;
+	color:hsla(325,100%,65%,1);
+	font-size:2.4em;
+	text-align:center;
+	}
+/* opacity on background dims child elements */
+.basic_opacity.fig43 {
+	width:220px;
+	float:left;
+	opacity:.5;
+	background:url(pics/pink_hydrangeas.png) 0px 0px no-repeat;
+	margin:0 20px 0 0; /* positions code example next to image - remove */
+	}
+.basic_opacity.fig43 h2 {
+	margin:5px 0 0 4px;
+	font-family:Niconne;
+	color:hsla(325,100%,65%,1);
+	font-size:2.4em;
+	text-align:center center;	
+	}
+/* applying alpha to background overlay dims only the photograph */
+.basic_opacity.fig45 {
+	width:220px;
+	float:left;
+	background:-moz-linear-gradient(hsla(0,0%,100%,0.85) 0%, hsla(0,0%,100%,0.6) 100%),  url(pics/pink_hydrangeas.png);
+	background:-webkit-linear-gradient(hsla(0,0%,100%,0.85) 0%, hsla(0,0%,100%,0.6) 100%),  url(pics/pink_hydrangeas.png);
+	margin:0 20px 0 0; /* positions code example next to image - remove */
+	}
+.basic_opacity.fig45  h2 {
+	margin:5px 0 0 4px;
+	font-family:Niconne;
+	color:hsla(325,100%,65%,1);
+	font-size:2.4em;
+	text-align:center center;
+	}
+.basic_opacity.fig47 {
+	width:250px;
+	height:150px;
+	border-width:0;
+	border:1px solid #FFF;  /* hides corner artifacts */
+	background: -moz-radial-gradient(center, ellipse cover,  hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0) 64%, hsla(0,0%,100%,1) 71%, hsla(0,0%,100%,1) 100%), url(pics/tulips.png) 0px -0px;
+
+background: -webkit-radial-gradient(center, hsla(0,0%,100%,0) 0%,hsla(0,0%,100%,0) 64%,hsla(0,0%,100%,1) 71%, hsla(0,0%,100%,1) 100%), url(pics/tulips.png) 0px -0px;
+
+background: -o-radial-gradient(center, ellipse cover,  hsla(0,0%,100%,0) 0%,hsla(0,0%,100%,0) 64%,hsla(0,0%,100%,1) 71%,hsla(0,0%,100%,1) 100%), url(pics/tulips.png) 0px -0px;
+
+background: -ms-radial-gradient(center, ellipse cover,  hsla(0,0%,100%,0) 0%,hsla(0,0%,100%,0) 64%,hsla(0,0%,100%,1) 71%,hsla(0,0%,100%,1) 100%), url(pics/tulips.png) 0px -0px;
+
+background: radial-gradient(center, ellipse cover,  hsla(0,0%,100%,0) 0%,hsla(0,0%,100%,0) 64%,hsla(0,0%,100%,1) 71%,hsla(0,0%,100%,1) 100%), url(pics/tulips.png) 0px -0px;
+
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ), url(pics/tulips.png) 0px -0px;
+	}	
+	
+</style>
+
+<body>
+<div id="wrapper">
+
+	<p>Code examples from <a href="http://stylinwithcss.com/visual_stylin.php">Visual Stylin' with CSS3</a> by Charles Wyke-Smith</p>
+	<h1>Section 4 &#8226; Opacity</h1>
+
+	<figure>
+		<div class="basic_opacity fig33">
+		<img class="spiral1" src="pics/spiral.png" alt="swirl" />
+		<img class="spiral2" src="pics/spiral.png" alt="swirl" />
+		<img class="spiral3" src="pics/spiral.png" alt="swirl" />
+   		</div>
+		<pre><code>.spiral1 {
+  opacity:1; /* no transparency */
+  }
+.spiral2 {
+  opacity:0.5;
+  }
+.spiral3 {
+  opacity:0.2;
+  }</code></pre>
+		<figcaption><span>Figure 33:</span> Images with opacity settings of 1, 0.5, and 0.2, from left to right.
+        </figcaption>
+	</figure>
+
+	<figure>
+    	<div class="basic_opacity fig35">
+            <div class="alpha_steps">
+            <p>	<span class="opaque">1</span>
+                <span class="point9">.9</span>
+                <span class="point8">.8</span>
+                <span class="point7">.7</span>
+                <span class="point6">.6</span>
+                <span class="point5">.5</span>
+                <span class="point4">.4</span>
+                <span class="point3">.3</span>
+                <span class="point2">.2</span>
+                <span class="point1">.1</span>
+            </p>   
+            </div>
+    	</div> 
+    	<code>color:hsla(200,100%,50%,.4)</code>
+    	<figcaption><span>Figure 35:</span> Various levels of opacity of HSLA colors. The code example shows an opacity level of 0.4&mdash;40% opaque.
+        </figcaption>
+	</figure>
+
+	<figure>
+    	<div class="basic_opacity fig37">
+    	<div class="alpha">
+        <p><span class="aph1">A</span><span class="aph2">L</span><span class="aph3">P</span><span class="aph4">H</span><span class="aph5">A</span></p>
+    	</div>
+    	</div>
+    	<pre><code>&lt;div class="basic_opacity fig37">
+  &lt;div class="alpha">
+    &lt;p>
+      &lt;span class="aph1">A&lt;/span>
+      &lt;span class="aph2">L&lt;/span>
+      &lt;span class="aph3">P&lt;/span>
+      &lt;span class="aph4">H&lt;/span>
+      &lt;span class="aph5">A&lt;/span>
+    &lt;/p>
+  &lt;/div>
+&lt;/div>
+
+.basic_opacity.fig37 .alpha {
+  font-size:130px;
+  line-height:0;
+  margin:0 0 0 3px;
+  height:auto;
+  }
+.basic_opacity.fig37 .alpha p span {
+  font-family:Arial Bold, verdana, sans serif;
+  font-weight:bold;
+  }
+.basic_opacity.fig37 .aph1 { /* A */
+  color:hsla(325,100%,65%,.5);
+  margin:0 0 0 0px;
+  }
+.basic_opacity.fig37 .aph2 { /* L */
+  color:hsla(31,100%,54%,.5);
+  margin:0 0 0 -30px; /* negative left letter kerning */
+  }
+.basic_opacity.fig37 .aph3 { /* P */
+  color:hsla(186,87%,55%,.5); 
+  margin:0 0 0 -26px; /* negative left letter kerning */
+  }
+.basic_opacity.fig37 .aph4 { /* H */
+  color:hsla(31,100%,54%,.5);
+    margin:0 0 0 -30px; /* negative left letter kerning */
+  }
+.basic_opacity.fig37 .aph5 { /* A */
+  color:hsla(325,100%,65%,.5);
+  margin:0 0 0 -30px; /* negative left letter kerning */
+  }</code></pre>
+    	<figcaption><span>Figure 37:</span> An eye-catching combination of a bold font, negative letter spacing, and semi-transparent HSLA colors.
+        </figcaption>
+	</figure>
+
+	<figure>
+    	<div class="basic_opacity fig40">
+        <h2>Hydrangeas</h2>
+      	</div>
+        <pre><code>&lt;div>
+  &lt;h2>Hydrangeas&lt;/h2>
+&lt;/div>
+
+background:url(pics/pink_hydrangeas.png) no-repeat center;</code></pre>
+		<figcaption><span>Figure 40:</span> The type is not easily read on the detailed image.</figcaption>
+	</figure>
+
+	<figure>
+    	<div class="basic_opacity fig43">
+        <h2>Hydrangeas</h2>
+    	</div>
+    </figure>
+	<figure>
+    	<pre><code>opacity:.5;
+background:url(pics/pink_hydrangeas.png) 0px 0px no-repeat;</code></pre>
+		<figcaption><span>Figure 43:</span>Setting 50% opacity on the element to lighten its background also lightens its child text.
+        </figcaption>
+	</figure>
+
+	<figure>
+    	<div class="basic_opacity fig45">
+        <!--figure elements go here-->
+        <!-- TEMP IMAGE - REMOVE-->
+        <h2>Hydrangeas</h2>
+    	</div>
+    	<pre><code>background:linear-gradient(top,  hsla(0,0%,100%,.85) 0%, 
+hsla(0,0%,100%,.85) 100%), url(pics/pink_hydrangeas.png);</code></pre>
+		<figcaption><span>Figure 45:</span> Here I add a solid white background over the background image and set its alpha channel to 0.85.</figcaption>
+	</figure>
+
+	<figure>
+    	<div class="basic_opacity fig47">
+    	</div>
+   		<pre><code>background:radial-gradient(
+center, ellipse cover,  
+hsla(0,0%,100%,0) 0%, /* center */
+hsla(0,0%,100%,0) 64%, 
+hsla(0,0%,100%,1) 71%,
+hsla(0,0%,100%,1) 100% /* outer edge */
+),
+url(pics/tulips.png) 0px -0px;</code></pre>
+		<figcaption><span>Figure 47:</span> A background gradient with a transparent center overlays a background image.
+        </figcaption>
+	</figure>
+
+</div>
+</body>
+</html>

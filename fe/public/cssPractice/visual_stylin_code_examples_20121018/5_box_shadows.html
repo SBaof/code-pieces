@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Visual Stylin' - Section 5 - Box Shadows</title>
+<link href=
+'http://fonts.googleapis.com/css?family=Anton|Niconne|Prata|Trocchi|Open+Sans:300italic,300|Open+Sans+Condensed:700|Comfortaa:400,700,300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="code_examples_base.css" />
+<style>
+.basic_shadow, .basic_text_shadow {
+	width:150px;
+	height:100px;
+	margin:20px 0px;
+	padding:10px;
+	border:1px solid #ededed;
+	border-radius:5px;
+	position:relative;
+	}
+.basic_shadow code, .basic_text_shadow code {
+	margin:0 0 0 160px;
+	
+	/*position:absolute;*/
+	top:0px;
+	width:500px;
+	padding:0 0 0 2em;
+	display:inline-block;
+	}
+	
+	/*  box fill */
+.interior_gradient {
+background: rgb(255,255,255); /* Old browsers */
+
+background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%, rgba(224,224,224,1) 100%); /* FF3.6+ */
+
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(224,224,224,1))); /* Chrome,Safari4+ */
+
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(230,231,232,1) 100%); /* Chrome10+,Safari5.1+ */
+
+background: -o-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(224,224,224,1) 100%); /* Opera 12+ */
+
+background: -ms-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(224,224,224,1) 100%); /* IE10+ */
+
+background: radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(224,224,224,1) 100%); /* W3C */
+
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e0e0e0',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	}
+
+figure pre {
+	margin:0;
+	}
+	.basic_shadow.fig50_1 {
+	box-shadow: 8px 8px #000;
+	}
+	.basic_shadow.fig50_2 {
+	box-shadow: 8px 8px 4px #AAA;
+	}
+	.basic_shadow.fig50_3 {
+	box-shadow: 12px 12px 40px #AAA;
+	
+	}
+	.basic_shadow.fig51_1 {
+	box-shadow: -8px -8px 4px #AAA;
+	}
+	.basic_shadow.fig51_2 {
+	box-shadow: 0px 0px 10px 4px #d5f4f7;
+	}
+	.basic_shadow.fig51_3 {
+	background:#EEE;
+	box-shadow: -10px -10px 10px #CCC inset, 10px 10px 10px #FFF inset;
+	}
+	.basic_shadow.fig52_1 {
+	box-shadow: 0 5px 5px 4px #DDD;
+	}
+	.basic_shadow.fig52_2 {
+	box-shadow: 0 -8px 8px -1px #999;
+	}
+	.basic_shadow.fig52_3 {
+	box-shadow: 0 12px 8px -9px #555;
+	}
+.fig53 {
+	height:100px;
+	width:150px;
+	background-color:#ff58ba;
+	border:4px dashed #FFF;
+	border-radius:10px;
+	box-shadow: 
+	4px 4px #ff58ba,	/* four hard shadows extend the box */
+	-4px 4px #ff58ba, 
+	4px -4px #ff58ba,
+	-4px -4px #ff58ba, 
+	8px 8px 12px #AAA; /* 'real' soft shadow */
+	margin:20px 0; /* only needed for this demo */
+	}
+	
+</style>
+</head>
+
+<body>
+<div id="wrapper">
+	<p>Code examples from <a href="http://stylinwithcss.com/visual_stylin.php">Visual Stylin' with CSS3</a> by Charles Wyke-Smith</p>
+	<h1>Section 5 &#8226; Box Shadows</h1>
+    
+	<figure>
+    	<div class="basic_shadow fig50_1 interior_gradient">
+        <!--figure elements go here-->
+        <code>box-shadow: 8px 8px #000;</code>    
+        </div>
+    	<div class="basic_shadow fig50_2 interior_gradient">
+         <!--figure elements go here-->
+        <code>box-shadow: 8px 8px 4px #AAA;</code>    
+        </div>
+   		<div class="basic_shadow fig50_3 interior_gradient">
+        <!--figure elements go here-->
+        <code>box-shadow: 12px 12px 40px #AAA;</code>    
+        </div>
+    	<!--Note that Figure: will be replaced on page load with e.g. Figure 10:  - don't edit Figure: -->
+		<figcaption><span>Figure 50:</span> Three basic shadows.</figcaption>
+	</figure>
+
+	<figure>
+    	<div class="basic_shadow fig51_1 interior_gradient">
+        <!--figure elements go here-->
+        <code>box-shadow: -8px -8px 4px #AAA;</code>    
+        </div>
+    	<div class="basic_shadow fig51_2 interior_gradient">
+        <!--figure elements go here-->
+        <code>box-shadow: 0px 0px 20px 4px #F99;</code>    
+        </div>
+   		<div class="basic_shadow fig51_3">
+        <!--figure elements go here-->
+        <code>box-shadow: -10px -10px 10px #CCC inset, 10px 10px 10px #FFF inset;
+background:#EEE;</code>    
+		</div>
+    	<!--Note that Figure: will be replaced on page load with e.g. Figure 10:  - don't edit Figure: -->
+		<figcaption><span>Figure 51:</span> Three variations of more complex shadow effects.</figcaption>
+	</figure>
+
+	<figure>
+    	<div class="basic_shadow fig52_1 interior_gradient">
+        <!--figure elements go here-->
+        <code>box-shadow: 0 5px 5px 4px #DDD;	</code>    
+        </div>
+ 		<div class="basic_shadow fig52_2 interior_gradient">
+        <!--figure elements go here-->
+        <code>box-shadow: 0 -8px 8px -1px #999;</code>    
+        </div>
+ 		<div class="basic_shadow fig52_3 interior_gradient">
+        <!--figure elements go here-->
+        <code>box-shadow: 0 12px 8px -9px #555;</code>    
+        </div>
+		<figcaption><span>Figure 52:</span> Three variations of single border shadows.</figcaption>
+	</figure>
+
+	<figure>
+    	<div class="fig53">
+    	</div>
+   		<pre><code>height:100px;
+width:150px;
+background-color:#CC3300;
+border:4px dashed #FFF;
+border-radius:10px;
+box-shadow: 
+4px 4px #C30,	/* four hard shadows extend the box */
+-4px 4px #C30, 
+4px -4px #C30,
+-4px -4px #C30, 
+8px 8px 12px #AAA; /* 'real' shadow */</code></pre>
+		<figcaption><span>Figure 53:</span> Four hard-edged shadows extend the box past its dashed border, creating the popular stitched effect.
+        </figcaption>
+	</figure>
+
+</div>
+
+</body>
+
+</html>

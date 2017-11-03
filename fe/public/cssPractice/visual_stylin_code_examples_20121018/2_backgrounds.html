@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Visual Stylin' - Section 2 - Backgrounds</title>
+<link href=
+'http://fonts.googleapis.com/css?family=Anton|Niconne|Prata|Trocchi|Open+Sans:300italic,300|Open+Sans+Condensed:700|Comfortaa:400,700,300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="code_examples_base.css" />
+<style>
+
+figure code {
+	padding:0;
+	margin:15px 0 0 10px;
+	display:inline-block;
+	}
+figcaption code {
+	margin:0;
+	font-size:1.15em;
+	}
+.bgs_figure.bgs2 {
+	width:150px;
+	height:100px;
+	margin:10px 0 10px;
+	padding:10px;
+	float:left;
+	}
+.bgs_figure.bgs2 code {
+	margin:0 0 0 0px;
+	max-width:500px;
+	display:inline-block;
+	}
+	
+/* BACKGROUNDS */
+.bgs_figure {
+	width:150px;
+	height:100px;
+	margin:10px 0 10px;
+	padding:10px;
+	float:left;
+	}
+.bgs_figure.fig12 {
+	background: url(pics/turq_spiral.png) #ffbd75 center no-repeat;
+	}
+.bgs_figure.fig12 h4 {
+	font-family:"Open Sans Condensed", arial, sans-serif;
+	margin:30px auto 0;
+	text-align:center;
+	font-size:2em;
+	color:#999;
+	}
+
+/* three basic border boxes demo */
+.bgs_figure.bgs2.fig16{
+	background: url(pics/blue_triangle.png) #ffbd75 repeat-x;
+	}
+.bgs_figure.bgs2.fig17 {
+	background: url(pics/blue_triangle.png) #ffbd75 repeat-y;
+	}
+.bgs_figure.bgs2.fig18 {
+	background: url(pics/blue_triangle.png) #ffbd75 no-repeat center center;
+	}
+.bgs_figure.bgs2.fig19 {
+		background: url(pics/blue_triangle.png) #ffbd75 center center;
+	}
+.bgs_figure.fig20 {
+	background:  
+		url(pics/turq_spiral.png) -25px -5px no-repeat, 
+		url(pics/pink_spiral.png) 55px 0px no-repeat,
+		url(pics/gray_spiral.png) 60px -28px no-repeat #ffbd75;
+	}
+	
+</style>
+</head>
+
+<body>
+<div id="wrapper">
+
+	<p>Code examples from <a href="http://stylinwithcss.com/visual_stylin.php">Visual Stylin' with CSS3</a> by Charles Wyke-Smith</p>
+	<h1>Section 2 &#8226; Backgrounds</h1>
+
+	<figure>
+    	<div class="bgs_figure fig12">
+      	<h4>Spiral</h4> 
+	    </div>
+   		<pre><code>background-color:#ffbd75;
+background-image:url(pics/turq_spiral.png);
+background-position: center;
+background-repeat:no-repeat;</code></pre>
+		<figcaption><span>Figure 12:</span> Text in a nested element overlays its parent element's background color and a background image.
+        </figcaption>
+	</figure>
+
+	<figure>
+		<div class="bgs_figure bgs2 fig16">
+    	<pre><code>background: url(pics/blue_triangle.png) 
+#ffbd75 repeat-x;</code></pre>
+		</div> 
+		<figcaption><span>Figure 16:</span> The keyword <code>repeat-x</code> makes the tile repeat horizontally only.</figcaption>
+	</figure>
+
+	<figure>
+		<div class="bgs_figure bgs2 fig17">
+    	<pre><code>background: url(pics/blue_triangle.png) 
+#ffbd75 repeat-y;</code></pre>
+		</div>
+		<figcaption><span>Figure 17:</span> The keyword <code>repeat-y</code> makes the tile repeat vertically only.</figcaption>
+	</figure>
+
+	<figure>
+		<div class="bgs_figure bgs2 fig18">
+    	<pre><code>background: url(pics/blue_triangle.png) 
+#ffbd75 no-repeat center center;</code></pre>
+		</div>
+		<figcaption><span>Figure 18:</span> The keyword <code>no-repeat</code> makes the tile display once only. The position keywords <code>center</code> and <code>center</code> center the type horizontally and vertically.
+        </figcaption>
+	</figure>
+
+	<figure>
+		<div class="bgs_figure bgs2 fig19">
+    	<pre><code>background: url(pics/blue_triangle.png) 
+    #ffbd75 center center;</code></pre>
+		</div>
+		<figcaption><span>Figure 19:</span> Without an explict repeat setting, <code>border-repeat</code> defaults to the keyword <code>repeat</code>, and the tiling occurs in both directions to fill the box.
+        </figcaption>
+	</figure>
+    
+	<figure>
+    	<div class="bgs_figure fig20">
+      	<!--figure elements go here-->
+      	<!-- TEMP IMAGE - REMOVE-->
+      	<pre><code>url(pics/turq_spiral.png) -25px -5px no-repeat, 
+url(pics/pink_spiral.png) 55px 0px no-repeat,
+url(pics/gray_spiral.png) 60px -28px no-repeat #ffbd75;</pre></code>
+		</div>
+    
+    	<!--Note that Figure: will be replaced on page load with e.g. Figure 10:  - don't edit Figure: -->
+		<figcaption><span>Figure 20:</span> Multiple background images can be added to an element.
+        </figcaption>
+	</figure>
+</body>
+</html>

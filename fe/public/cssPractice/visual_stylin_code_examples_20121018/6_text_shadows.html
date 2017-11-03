@@ -1,0 +1,209 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Visual Stylin' - Section 6 - Text Shadows</title>
+<link href=
+'http://fonts.googleapis.com/css?family=Anton|Niconne|Prata|Trocchi|Open+Sans:300italic,300|Open+Sans+Condensed:700|Comfortaa:400,700,300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="code_examples_base.css" />
+<style>
+.basic_shadow, .basic_text_shadow {
+	font-family:Prata;
+	width:150px;
+	height:100px;
+	margin:20px 0px;
+	padding:10px;
+	border:1px solid #ededed;
+	border-radius:5px;
+	position:relative;
+	}
+.basic_shadow code, .basic_text_shadow code {
+	margin:0 0 0 160px;
+	
+	/*position:absolute;*/
+	top:0px;
+	width:500px;
+	padding:0 0 0 2em;
+	display:inline-block;
+	}
+.basic_text_shadow {
+	position:relative;
+	}
+	/*  box fill */
+.interior_gradient {
+background: rgb(255,255,255); /* Old browsers */
+
+background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%, rgba(224,224,224,1) 100%); /* FF3.6+ */
+
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(224,224,224,1))); /* Chrome,Safari4+ */
+
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(230,231,232,1) 100%); /* Chrome10+,Safari5.1+ */
+
+background: -o-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(224,224,224,1) 100%); /* Opera 12+ */
+
+background: -ms-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(224,224,224,1) 100%); /* IE10+ */
+
+background: radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(224,224,224,1) 100%); /* W3C */
+
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e0e0e0',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	}
+.basic_text_shadow h1 {
+	font-size:100px;
+	line-height:1;
+	color:hsla(186, 87%, 55%,1);
+	margin:5px 0 0 0px;
+	text-align:center;
+	}
+.basic_text_shadow code {
+	position: absolute;
+	top:15px;
+	left:0px;
+	}
+.basic_text_shadow.fig55_1 h1 {
+	text-shadow: 3px 3px #000;
+	}
+	.basic_text_shadow.fig55_2 h1 {
+	text-shadow: 3px 3px 4px #AAA;
+	}
+	.basic_text_shadow.fig55_3 h1 {
+	text-shadow: 12px 12px 12px #AAA;
+	}
+	.basic_text_shadow.fig56_1 h1 {
+	text-shadow: -8px -8px 4px #AAA;
+	}
+	.basic_text_shadow.fig56_2 h1 {
+	text-shadow: 0px 0px 10px hsla(60, 0%, 50%,1);
+	}
+	.basic_text_shadow.fig56_3 h1 {
+	text-shadow: -18px 0px 3px hsla(125, 80%, 50%,.2), 
+	18px 0px 3px hsla(60, 80%, 50%,.8);
+	}
+	.basic_text_shadow.fig57_1 h1 {
+	text-shadow: 0 8px 4px #CCC;
+	}
+	.basic_text_shadow.fig57_2 h1 {
+	text-shadow: 0 -3px 1px #444;
+	}
+	.basic_text_shadow.fig57_3 h1 {
+	text-shadow: 0 12px 9px #555;
+	}
+.fig58 h1 {
+	font-size:150px;
+	font-family:Prata;
+	line-height:1;
+	color:#ff58ba;
+	text-shadow: 5px 3px #555;
+	}
+.fig59 h1 {
+	font-family:Prata;
+	font-size:150px;
+	/*color:hsla(180, 50%, 50%,1);*/
+	color:#ff58ba;
+	text-shadow:
+	1px 1px 0 #555,
+	2px 2px 0 #555, /* end of 2 level deep grey shadow */
+	3px 3px 0 #555,
+	4px 4px 0 #555,
+	5px 5px 0 #555,
+	6px 6px 0 #555; /* end of 4 level deep dark shadow */
+	}
+.fig60 h1 {
+	font-size:150px;
+	font-family:Prata;
+	color:#ff58ba;
+	text-shadow:
+	1px 1px 0 #555,
+	2px 2px 0 #555, /* end of 2 level deep grey shadow */
+	3px 3px 0 #555,
+	4px 4px 0 #555,
+	5px 5px 0 #555,
+	6px 6px 0 #555,
+	20px 20px 8px #999; /* "real" shadow */
+	}
+</style>
+</head>
+
+<body>
+<div id="wrapper">
+	<p>Code examples from <a href="http://stylinwithcss.com/visual_stylin.php">Visual Stylin' with CSS3</a> by Charles Wyke-Smith</p>
+	<h1>Section 6 &#8226; Text Shadows</h1>
+    
+	<figure>
+    	<div class="basic_text_shadow fig55_1 interior_gradient">
+        <h1>M</h1>
+        <code>text-shadow: 3px 3px #000;</code>    
+        </div>
+   		<div class="basic_text_shadow fig55_2 interior_gradient">
+        <h1>T</h1>
+        <code>text-shadow: 3px 3px 4px #AAA;</code>    
+        </div>
+    	<div class="basic_text_shadow fig55_3 interior_gradient">
+        <h1>X</h1>
+        <code>text-shadow: 12px 12px 12px #AAA;</code>    
+        </div>
+		<figcaption><span>Figure 55:</span> Three basic text shadows.</figcaption>
+	</figure>
+
+	<figure>
+    	<div class="basic_text_shadow fig56_1 interior_gradient">
+        <h1>J</h1>
+        <code>text-shadow: -8px -8px 4px #AAA;</code>    
+        </div>
+     	<div class="basic_text_shadow fig56_2 interior_gradient">
+        <h1>Y</h1>
+        <code>text-shadow: 0px 0px 10px hsla(60, 0%, 50%,1);</code>    
+        </div>
+    	<div class="basic_text_shadow fig56_3 interior_gradient">
+        <h1>2</h1>
+        <code>text-shadow: -18px 0px 3px hsla(125, 80%, 50%,.2), 
+	18px 0px 3px hsla(60, 80%, 50%,.8);</code>    
+    	</div>
+		<figcaption><span>Figure 56:</span> Three shadows&mdash;negative offsets, blur-only shadow, and two shadows with transparency.
+        </figcaption>
+	</figure>
+
+	<figure>
+    	<div class="basic_text_shadow fig57_1 interior_gradient">
+        <h1>C</h1>
+        <code>text-shadow: 0 8px 4px #CCC;
+-ms-text-shadow: 0 8px 4px #CCC;</code>    
+      	</div>
+     	<div class="basic_text_shadow fig57_2 interior_gradient">
+        <h1>7</h1>
+        <code>text-shadow: 0 -3px 1px #444;</code>    
+     	</div>
+    	<div class="basic_text_shadow fig57_3 interior_gradient">
+        <h1>W</h1>
+        <code>text-shadow: 0 12px 9px #555;</code>   
+    	</div>
+		<figcaption><span>Figure 57:</span> Single-side shadows and how to control them.</figcaption>
+	</figure>
+
+	<figure>	
+		<div class="fig58">
+    	<h1>T</h1>
+    	</div>
+		<figcaption><span>Figure 58:</span> An object and a single shadow.</figcaption>
+	</figure>
+
+	<figure>	
+		<div class="fig59">
+    	<h1>S</h1>
+    	</div>
+		<figcaption><span>Figure 59:</span> Six stacked shadows, each with a different offset, result in a solid, 3-D look.
+        </figcaption>
+	</figure>
+
+	<figure>	
+		<div class="fig60">
+    	<h1>T</h1>
+    	</div>
+		<figcaption><span>Figure 60:</span> The 3-D letter with shadow. This element now has seven text shadows.
+        </figcaption>
+	</figure>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>layout 1</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="main.css">
+</head>
+<body>
+	<div id="wrapper">
+		<header>
+			A Fixed-Width Layout
+		</header>
+		<nav>
+			<div class="inner">
+				<ul>
+					<li>item1</li>
+					<li>item2</li>
+					<li>item3</li>
+				</ul>
+			</div>
+		</nav>
+		<article>
+			<div class="inner">
+				<p>
+					<h1>从一个简单的居中的单栏固定布局开始吧。</h1>为了让布局好看一点,我写了一些简 单的样式。为节省版面,我们没有给出这些样式,实际上它们对本节要讲的技术没 有任何影响。主要标记的 ID 是 wrapper(外包装),这个容器里包含了一栏。
+				</p>
+				<p>
+					<h1>这是第二个标题</h1>
+					通过给整个外包装设定宽度值,并将其水平外边距设定为 auto,这 个单栏布局在页面上居中了。随着向里添加内容,这一栏的高度会相应增加。外包 装中的 article 元素本质上就是一个没有宽度的块级盒子(关于“没有宽度的盒子”, 请参见 3.2 节),它水平扩展填满了外包装。
+				</p>
+				<p>
+					<h1>接下来添加一个导航</h1>
+				</p>
+				<p>
+					<h1>再添加一个 aside</h1>
+				</p>
+			</div>
+		</article>
+		<aside>
+			<div class="inner">
+				<h2>这一块是 sidebar</h2>
+				里边不想再写什么东西了，感觉没没啥用
+			</div>
+		</aside>
+		<footer>
+			这个就是页脚
+		</footer>
+	</div>
+</body>
+</html>

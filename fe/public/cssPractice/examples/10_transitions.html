@@ -1,0 +1,274 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>Visual Stylin' - Section 10 - Transitions</title>
+<link href=
+'http://fonts.googleapis.com/css?family=Anton|Niconne|Prata|Trocchi|Open+Sans:300italic,300|Open+Sans+Condensed:700|Comfortaa:400,700,300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="code_examples_base.css" />
+<style>
+figure pre {
+	display:static;
+	clear:both;
+	margin:20px 0 10px 10px;
+	}
+.transitions.fig91_1 {
+	height:100px;
+	width:150px;
+	border:3px solid hsla(80,65%,50%,1);
+	background:url(pics/leaves.png);
+	float:left;
+	}
+.transitions.fig91_1:hover {
+	height:100px;
+	width:150px;
+	border:3px solid hsla(325,65%,50%,1);
+	background:url(pics/2_pink_flowers.png);
+	border-radius:50%;
+	}
+.transitions.fig91_2 {
+	height:100px;
+	width:150px;
+	border:3px solid hsla(80,65%,50%,1);
+	background:url(pics/leaves.png) center center;
+	-moz-transition:all linear 2s;
+	-webkit-transition:all linear 2s;
+	float:left;  /* only needed for this demo */
+	margin-left:20px;  /* only needed for this demo */
+	}
+.transitions.fig91_2:hover {
+	height:100px;
+	width:150px;
+	border:3px solid hsla(325,65%,50%,1);
+	background:url(pics/2_pink_flowers.png) center center;
+	border-radius:50%;
+	}
+.transitions.fig93 {
+	height:100px;
+	width:150px;
+	border:3px solid hsla(80,65%,50%,1);
+	background:url(pics/leaves.png) center center;
+	border-radius:0%;
+	-webkit-transition:border 1s linear, border-radius 3s linear, background 6s linear;
+	-moz-transition:border 1s linear, border-radius 3s linear, background 6s linear;
+	transition:border 1s linear, border-radius 3s linear, background 6s linear;
+	float:left; /* only needed for this demo */
+	}
+.transitions.fig93:hover {
+	border:3px solid hsla(325,65%,50%,1);
+	background:url(pics/2_pink_flowers.png) center center;
+	border-radius:50%;
+	}
+.transitions.fig95 nav {
+	width:70px;
+	float:left; /* remove to stack menus */
+	margin:0 20px 0 0; 
+	border:1px solid #DDD;
+	padding:5px 0;
+	border-radius:5px;
+	background:-moz-linear-gradient(#FFF 0%, #EEE 10%, #EEE 90%, #CCC 100%), #FFF;
+	background:-webkit-linear-gradient(#FFF 0%, #EEE 10%, #EEE 90%, #CCC 100%), #FFF;
+	background:linear-gradient(#FFF 0%, #EEE 10%, #EEE 90%, #CCC 100%), #FFF;
+	font:11px arial, sans-serif;
+	/* set the origin point to top-left of menu */
+	-moz-transform-origin: 0% 0%;
+	-webkit-transform-origin: 0% 0%;
+	transform-origin: 0% 0%;
+	/* set up reveal of sub-menu animation */		
+	-webkit-transition: all ease-out .7s;
+	-moz-transition: all ease-out .7s;
+	transition: all ease-out .7s;
+	}
+.transitions.fig95 nav:hover {
+	-webkit-transform: scale(2);
+    -moz-transform: scale(2);
+     transform: scale(2);
+	}
+/* stylings for menu */
+
+.transitions.fig95 nav li {
+	display:block;
+	border-bottom:1px solid #069;
+	margin:3px auto;
+	width:80%;
+	list-style-type:none;
+	}
+.transitions.fig95 nav li:last-child {
+	border:none;
+	margin-bottom:0;
+	} 
+.transitions.fig95 nav a {
+	display:block; 
+	width:100%; /* makes background of link clickable */
+	padding:0 0 3px;
+	color:#069;
+	text-decoration:none;
+	} 
+.transitions.fig95 nav a:hover {
+	color:#F33;
+	}
+</style>
+</head>
+
+<body>
+<div id="wrapper">
+
+	<p>Code examples from <a href="http://stylinwithcss.com/visual_stylin.php">Visual Stylin' with CSS3</a> by Charles Wyke-Smith</p>
+	<h1>Section 10 &#8226; Transitions</h1>
+
+	<figure>
+    	<div class="transitions fig91_1">
+	    </div>
+    	<div class="transitions fig91_2">
+	    </div>
+    
+    	<pre><code>.transitions.fig91_2 {
+	height:100px;
+	width:150px;
+	border:3px solid hsla(80,65%,50%,1);
+	background:url(pics/leaves.png)  center center;
+	<strong>-moz-transition:all linear 2s;
+	-webkit-transition:all linear 2s;
+	transition:all linear 2s;</strong>
+	}
+.transitions.fig91_2:hover {
+	border:3px solid hsla(325,65%,50%,1);
+	background:url(pics/2_pink_flowers.png);
+	border-radius:50%;
+	}</code></pre>
+    
+		<figcaption><span>Figure 91:</span> The left figure shows different styles are applied when the image is hovered. The right figure is the same, but with a 2-second transition added, as highlighted in the CSS.<br>
+		</figcaption>
+	</figure>
+
+	<figure>
+    	<div class="transitions fig93">
+    	</div>
+ 
+    	<pre><code>.transitions.fig93 {
+    height:100px;
+    width:150px;
+    border:3px solid hsla(80,65%,50%,1);
+    background:url(../pics/leaves.png) center center;
+    <strong>-moz-transition:border 1s linear, border-radius 3s linear, 
+    background 6s linear;
+    -webkit-transition:border 1s linear, border-radius 3s linear, 
+    	    background 6s linear;
+    transition:border 1s linear, border-radius 3s linear, 
+    background 6s linear;</strong>
+    }
+.transitions.demo3:hover {
+    border:3px solid hsla(325,65%,50%,1);
+    background:url(../pics/2_pink_flowers.png) center center;
+    border-radius:50%;
+    }</code></pre>
+    
+		<figcaption><span>Figure 93:</span> Now each element changes at a different speed.</figcaption>
+	</figure>
+
+	<figure>
+    	<div class="transitions fig95">
+            <nav>
+                <ul>
+                    <li><a href="#">Create</a></li>
+                    <li><a href="#">Read</a></li>
+                    <li><a href="#">Update</a></li>
+                    <li><a href="#">Delete</a></li>
+                </ul>
+            </nav>
+            
+            <nav>
+                <ul>
+                    <li><a href="#">HTML5</a></li>
+                    <li><a href="#">CSS</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                    <li><a href="#">PHP</a></li>
+                </ul>
+            </nav>
+            
+            <nav>
+                <ul>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Pinterest</a></li>
+                    <li><a href="#">Bublish</a></li>
+                </ul>
+            </nav>
+    	</div>
+ 
+   		<pre><code>&lt;nav>
+ &lt;ul>
+  &lt;li>&lt;a href="#">Create&lt;/a>&lt;/li>
+  &lt;li>&lt;a href="#">Read&lt;/a>&lt;/li>
+  &lt;li>&lt;a href="#">Update&lt;/a>&lt;/li>
+  &lt;li>&lt;a href="#">Delete&lt;/a>&lt;/li>
+ &lt;/ul>
+&lt;/nav></code></pre>
+      	<pre><code>nav {
+    /* basic menu styling */
+    width:100px;
+    float:left; /* remove to stack menus */
+    margin:0 20px 0 0; 
+    border:1px solid #DDD;
+    padding:5px 0;
+    border-radius:5px;
+ 
+    /* background gradient */
+    background:-moz-linear-gradient(#FFF 0%, #EEE 10%, #EEE 90%, 
+      #CCC 100%), #FFF;
+    background:-webkit-linear-gradient(#FFF 0%, #EEE 10%, #EEE 90%,
+      #CCC 100%), #FFF;
+    background:linear-gradient(#FFF 0%, #EEE 10%, #EEE 90%, #CCC 100%), #FFF;
+    font:11px arial, sans-serif;
+    background:linear-gradient(#FFF 0%, #EEE 10%, #EEE 90%, #CCC 100%), #FFF;
+    font:11px arial, sans-serif;
+    overflow:hidden;
+ 
+    /* set the origin point to top-left of menu */
+    <strong>-moz-transform-origin: 0% 0%;
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;</strong>
+ 
+    /* set up of menu animation */		
+    <strong>-webkit-transition: all ease-out .7s;
+    -moz-transition: all ease-out .7s;
+    transition: all ease-out .7s;</strong>
+    }
+ 
+nav:hover {
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+     transform: scale(2);
+    }
+ 
+/* more stylings for menu */
+nav li {
+    display:block;
+    border-bottom:1px solid #069;
+    margin:3px auto;
+    width:80%;
+    list-style-type:none;
+    }
+nav li:last-child {
+    border:none;
+    margin-bottom:0;
+    } 
+nav a {
+    display:block; 
+    width:100%; /* makes background of link clickable */
+    padding:0 0 3px;
+    color:#069;
+    text-decoration:none;
+    } 
+nav a:hover {
+    color:#F33;
+    }</code></pre>
+		<figcaption><span>Figure 95:</span> These little menus scale to twice the size when you mouse over them.</figcaption>
+	</figure>
+    
+</div>
+
+</body>
+
+</html>

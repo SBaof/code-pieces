@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>Visual Stylin' - Section 8 - Border Images</title>
+<link href=
+'http://fonts.googleapis.com/css?family=Anton|Niconne|Prata|Trocchi|Open+Sans:300italic,300|Open+Sans+Condensed:700|Comfortaa:400,700,300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="code_examples_base.css" />
+
+<style>
+
+.border_images {
+	width:150px;
+	margin:10px 0px 10px;
+	padding:10px;
+	}
+figure pre {
+	margin-left:10px;
+	}
+.border_images code {
+	padding:8px;
+	display:inline-block;
+	max-width:400px;
+	min-width:600px;
+	}
+/* two basic rounded corners demo */
+.border_images.demo_slicing {
+	height:236px;
+	width:236px;
+	margin:0 0 20px -15px
+	}
+.border_images.fig67 {
+	height:100px;
+	padding:10px 10px; 
+	border: 3px solid #64d1dd;
+	-moz-border-image:url("pics/three_lines_box.png") 30 / 30px repeat;
+	-webkit-border-image:url("pics/three_lines_box.png") 30 /30px  repeat;
+	border-image:url("pics/three_lines_box.png") 30 /30px repeat;	
+	}	
+	.border_images.fig70 {
+	height:45px;
+	padding:10px 20px;
+	border: 3px solid #ffbd75;
+	border-width:15px;
+	-moz-border-image:url("pics/circle_border_orange_turq.png") 15 repeat;
+	-webkit-border-image:url("pics/circle_border_orange_turq.png")  15 repeat;
+	border-image:url("pics/circle_border_orange_turq.png")  15 repeat;	
+	}
+
+	.border_images.fig72 {
+	border: 3px solid #ffbd75;
+	border-width:15px;
+	-moz-border-image:url("pics/circle_border_orange_turq.png") 15 round;
+	-webkit-border-image:url("pics/circle_border_orange_turq.png") 15 round;
+	 border-image:url("pics/circle_border_orange_turq.png") 15 round;
+	}
+	.border_images.fig74 {
+	border: 3px solid #ffbd75;
+	border-width:15px;
+	-moz-border-image:url("pics/circle_border_orange_turq.png") 15 stretch;
+	-webkit-border-image:url("pics/circle_border_orange_turq.png") 15 stretch;
+	border-image:url("pics/circle_border_orange_turq.png") 15 stretch;	
+	}
+.border_images.fig77 {
+	height:70px;
+border: 3px solid #ffbd75;
+	border-width:15px;
+	-moz-border-image:url("pics/circle_border_orange_turq_gray.png") 15 round;
+	-webkit-border-image:url("pics/circle_border_orange_turq_gray.png") 15 round;
+	}
+.border_images.demo6 {
+	width:405px;
+border: 3px solid #ffbd75;
+	border-width:15px;
+	-moz-border-image:url("pics/circle_border_orange_turq_gray.png") 15 round;
+	-webkit-border-image:url("pics/circle_border_orange_turq_gray.png") 15 round;
+	
+	}
+.border_images.demo7 { /* test of all shorthand properties */
+border: 3px solid blue;
+width:405px;
+	-webkit-border-image:url("pics/square_round_corner.png") 15 / 15px 15px / 2 round;
+		-moz-border-image:url("pics/square_round_corner.png") 15 / 15px 7px 20px 12px round;
+	}
+.border_images.demo7 .inner {
+	border:2px solid #3FF;
+	}
+</style>
+</head>
+
+<body>
+<div id="wrapper">
+	<p>Code examples from <a href="http://stylinwithcss.com/visual_stylin.php">Visual Stylin' with CSS3</a> by Charles Wyke-Smith</p>
+	<h1>Section 8 &#8226; Border Images</h1>
+
+	<figure>
+		<div class="border_images">
+		<img src="pics/three_lines_box.png" alt="border image" />
+		</div>
+		<figcaption><span>Figure 65:</span> Artwork for use as border images.</figcaption>
+	</figure>
+
+	<figure>
+		<div class="border_images fig67">
+		</div>
+		<pre><code>padding:10px 10px; 
+border: 3px solid #64d1dd;
+-moz-border-image:url("pics/turq_border_box.png") 30 / 30px repeat;
+-webkit-border-image:url("pics/turq_border_box.png") 30 / 30px repeat;
+border-image:url("pics/turq_border_box.png") 30 / 30px / 2 repeat;</code></pre>
+		<figcaption><span>Figure 66:</span> The corners of the image are placed in the corners of the box, and the sides of the image repeat to fill the length of the sides.
+        </figcaption>
+	</figure>
+
+	<figure>
+		<div class="border_images demo_slicing">
+		<img src="pics/three_line_box_crop_marks.png" alt="border image with crop marks" />
+		</div>
+		<figcaption><span>Figure 68:</span> A border graphic gets sliced into nine pieces to create the four sides and the corners (and the discarded center) that are displayed along the element's border.
+        </figcaption>
+	</figure>
+
+	<figure>
+		<img src="pics/circle_border_orange_turq.png" alt="orange and turquoise circle border image" />
+		<figcaption><span>Figure 69:</span> A border graphic made up of just eight circles.</figcaption>
+	</figure>
+
+	<figure>
+		<div class="border_images fig70">
+		</div>
+		<pre><code>padding:10px 20px;
+border: 3px solid #ffbd75;
+border-width:15px;
+-moz-border-image:url("pics/circle_border_orange_turq.png") 15 repeat;
+-webkit-border-image:url("pics/circle_border_orange_turq.png") 15 repeat;
+border-image:url("pics/circle_border_orange_turq.png") 15 repeat;</code></pre>
+		<figcaption><span>Figure 70:</span> The sliced graphic displays each corner and repeats the sides.
+        </figcaption>
+	</figure>
+
+	<figure>
+		<div class="border_images fig72">
+		</div>
+		<pre><code>border: 3px solid #ffbd75;
+border-width:15px;
+-moz-border-image:url("pics/circle_border_orange_turq.png") 15 round;
+-webkit-border-image:url("pics/circle_border_orange_turq.png") 15 round;
+border-image:url("pics/circle_border_orange_turq.png") 15 round;</code></pre>
+		<figcaption><span>Figure 72:</span> The image repeats are stretched to fill the sides an exact number of times. Note the squished circles in the vertical borders. Note: Firefox is the only browser that can do this.
+        </figcaption>
+	</figure>
+
+	<figure>
+		<div class="border_images fig74">
+		</div>
+		<pre><code>border: 
+3px solid #ffbd75;
+border-width:15px;
+-moz-border-image:url("pics/circle_border_orange_turq.png") 15 stretch;
+-webkit-border-image:url("pics/circle_border_orange_turq.png") 15 stretch;
+border-image:url("pics/circle_border_orange_turq.png") 15 stretch;</code></pre>
+		<figcaption><span>Figure 74:</span> The sliced graphic displays each corner and stretches a single repeat of the sides.
+        </figcaption>
+	</figure>
+
+<!-- pic of border image - fig 76-->
+	<figure>
+        <img src="pics/circle_border_orange_turq_gray.png" alt="orange and turquoise border image with gray circle interior" />
+    	<figcaption><span>Figure 76:</span> A border graphic made up of nine circles. Note the gray center circle.</figcaption>
+	</figure>
+
+<!-- fill and round fig-->
+	<figure>
+    	<div class="border_images fig77">
+  		</div>
+    	<pre><code>border: 3px solid #ffbd75;
+border-width:15px;
+-moz-border-image:url("pics/circle_border_orange_turq_gray.png") 15 round;
+-webkit-border-image:url("pics/circle_border_orange_turq_gray.png") 
+    15 round;
+border-image:url("pics/circle_border_orange_turq_gray.png") 15 round;
+</code></pre>
+    	<figcaption><span>Figure 77:</span> Test of "fill off" default and <code>round</code>.</figcaption>
+	</figure>
+
+</div>
+
+</body>
+
+</html>
